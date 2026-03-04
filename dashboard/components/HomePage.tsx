@@ -4,10 +4,30 @@ import Link from "next/link";
 import { BarChart3, MessageSquareQuote, Target, Lightbulb, Sparkles } from "lucide-react";
 
 const MODULE_CARDS = [
-  { href: "/dashboard", title: "Jira Feedback Dashboard", Icon: BarChart3 },
-  { href: "/categories", title: "Category quotes", Icon: MessageSquareQuote },
-  { href: "/problems", title: "Product problems", Icon: Target },
-  { href: "#", title: "Activation Strategy", Icon: Lightbulb },
+  {
+    href: "/dashboard",
+    title: "Jira Feedback Dashboard",
+    summary: "Teacher experience feedback from Jira, filterable by category and sub-category, with ticket list and AI ask.",
+    Icon: BarChart3,
+  },
+  {
+    href: "/categories",
+    title: "Category quotes",
+    summary: "Quotes and feedback grouped by category and sub-category with theme tiles and filters.",
+    Icon: MessageSquareQuote,
+  },
+  {
+    href: "/problems",
+    title: "Product problems",
+    summary: "Product problems and themes with value-to-customer and card counts by category.",
+    Icon: Target,
+  },
+  {
+    href: "/nps",
+    title: "NPS Feedback Categories",
+    summary: "Teacher NPS 2025 responses with category and theme from comments; filter by sub-category and view the breakdown chart.",
+    Icon: Lightbulb,
+  },
 ];
 
 const CALLOUTS = [
@@ -78,6 +98,11 @@ export function HomePage() {
                 <h2 style={{ margin: 0, fontSize: 16, fontWeight: 600, color: "#24292f" }}>
                   {card.title}
                 </h2>
+                {card.summary && (
+                  <p style={{ margin: "8px 0 0", fontSize: 13, color: "#57606a", lineHeight: 1.45 }}>
+                    {card.summary}
+                  </p>
+                )}
               </Link>
             );
           })}

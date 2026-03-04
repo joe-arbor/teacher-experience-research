@@ -3,6 +3,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { useThemeReady } from "@/app/providers";
+import { CategorySplitPieChart } from "@/components/CategorySplitPieChart";
 import { Heading, HeadingLevel } from "baseui/heading";
 import { Select } from "baseui/select";
 import { SELECT_FORM_FIELD_OVERRIDES } from "@/components/FormField";
@@ -62,6 +63,15 @@ export default function NpsView() {
     return Array.from(set).sort();
   }, [data, category]);
 
+  const categoryPieData = useMemo(() => {
+    const counts: Record<string, number> = {};
+    data.forEach((r) => {
+      const c = r.top_level_category || "Uncategorised";
+      counts[c] = (counts[c] || 0) + 1;
+    });
+    return Object.entries(counts).map(([name, count]) => ({ name, count }));
+  }, [data]);
+
   const chartData = useMemo(() => {
     const counts: Record<string, number> = {};
     data.forEach((r) => {
@@ -107,52 +117,58 @@ export default function NpsView() {
         </p>
       </HeadingLevel>
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 24, marginBottom: 24, alignItems: "flex-end" }}>
-        <div style={{ minWidth: 200 }}>
-          <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#24292f", marginBottom: 4 }}>Category</label>
-          <Select
-            overrides={SELECT_FORM_FIELD_OVERRIDES}
-            options={[{ id: "__all__", label: "All categories" }, ...CATEGORIES.map((c) => ({ id: c, label: c }))]}
-            value={category ? [{ id: category, label: category }] : [{ id: "__all__", label: "All categories" }]}
-            onChange={({ value }) => {
-              const id = value[0]?.id as string;
-              setCategory(id && id !== "__all__" ? id : null);
-              setSubCategory(null);
-            }}
-            getOptionLabel={({ option }) => (option?.label as string) ?? ""}
-            getValueLabel={({ option }) => (option?.label as string) ?? "All categories"}
-            placeholder="All categories"
-          />
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 24, alignItems: "flex-start", marginBottom: 24 }}>
+        <div style={{ flex: "1 1 0", minWidth: 0 }}>
+          <div style={{ display: "flex", gap: 24, alignItems: "flex-end", marginBottom: 24 }}>
+            <div style={{ minWidth: 200 }}>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#24292f", marginBottom: 4 }}>Category</label>
+              <Select
+                overrides={SELECT_FORM_FIELD_OVERRIDES}
+                options={[{ id: "__all__", label: "All categories" }, ...CATEGORIES.map((c) => ({ id: c, label: c }))]}
+                value={category ? [{ id: category, label: category }] : [{ id: "__all__", label: "All categories" }]}
+                onChange={({ value }) => {
+                  const id = value[0]?.id as string;
+                  setCategory(id && id !== "__all__" ? id : null);
+                  setSubCategory(null);
+                }}
+                getOptionLabel={({ option }) => (option?.label as string) ?? ""}
+                getValueLabel={({ option }) => (option?.label as string) ?? "All categories"}
+                placeholder="All categories"
+              />
+            </div>
+            <div style={{ minWidth: 220 }}>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#24292f", marginBottom: 4 }}>Sub-category</label>
+              <Select
+                overrides={SELECT_FORM_FIELD_OVERRIDES}
+                options={[{ id: "__all__", label: "All sub-categories" }, ...subCategoriesForCategory.map((s) => ({ id: s, label: s }))]}
+                value={subCategory ? [{ id: subCategory, label: subCategory }] : [{ id: "__all__", label: "All sub-categories" }]}
+                onChange={({ value }) => {
+                  const id = value[0]?.id as string;
+                  setSubCategory(id && id !== "__all__" ? id : null);
+                }}
+                getOptionLabel={({ option }) => (option?.label as string) ?? ""}
+                getValueLabel={({ option }) => (option?.label as string) ?? "All sub-categories"}
+                placeholder="All sub-categories"
+              />
+            </div>
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 16 }}>
+            <div style={{ padding: "16px 20px", background: "#ffffff", borderRadius: 8, border: "1px solid #d0d7de", minWidth: 140 }}>
+              <div style={{ fontSize: 24, fontWeight: 700, color: "#24292f" }}>{totalResponses}</div>
+              <div style={{ fontSize: 12, color: "#57606a", marginTop: 4 }}>Total responses</div>
+            </div>
+            <div style={{ padding: "16px 20px", background: "#ffffff", borderRadius: 8, border: "1px solid #d0d7de", minWidth: 140 }}>
+              <div style={{ fontSize: 24, fontWeight: 700, color: "#24292f" }}>{avgNps ?? "—"}</div>
+              <div style={{ fontSize: 12, color: "#57606a", marginTop: 4 }}>Average NPS (0–10)</div>
+            </div>
+            <div style={{ padding: "16px 20px", background: "#ffffff", borderRadius: 8, border: "1px solid #d0d7de", minWidth: 140 }}>
+              <div style={{ fontSize: 24, fontWeight: 700, color: "#24292f" }}>{withComment}</div>
+              <div style={{ fontSize: 12, color: "#57606a", marginTop: 4 }}>With comments</div>
+            </div>
+          </div>
         </div>
-        <div style={{ minWidth: 220 }}>
-          <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#24292f", marginBottom: 4 }}>Sub-category</label>
-          <Select
-            overrides={SELECT_FORM_FIELD_OVERRIDES}
-            options={[{ id: "__all__", label: "All sub-categories" }, ...subCategoriesForCategory.map((s) => ({ id: s, label: s }))]}
-            value={subCategory ? [{ id: subCategory, label: subCategory }] : [{ id: "__all__", label: "All sub-categories" }]}
-            onChange={({ value }) => {
-              const id = value[0]?.id as string;
-              setSubCategory(id && id !== "__all__" ? id : null);
-            }}
-            getOptionLabel={({ option }) => (option?.label as string) ?? ""}
-            getValueLabel={({ option }) => (option?.label as string) ?? "All sub-categories"}
-            placeholder="All sub-categories"
-          />
-        </div>
-      </div>
-
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 16, marginBottom: 24 }}>
-        <div style={{ padding: "16px 20px", background: "#ffffff", borderRadius: 8, border: "1px solid #d0d7de", minWidth: 140 }}>
-          <div style={{ fontSize: 24, fontWeight: 700, color: "#24292f" }}>{totalResponses}</div>
-          <div style={{ fontSize: 12, color: "#57606a", marginTop: 4 }}>Total responses</div>
-        </div>
-        <div style={{ padding: "16px 20px", background: "#ffffff", borderRadius: 8, border: "1px solid #d0d7de", minWidth: 140 }}>
-          <div style={{ fontSize: 24, fontWeight: 700, color: "#24292f" }}>{avgNps ?? "—"}</div>
-          <div style={{ fontSize: 12, color: "#57606a", marginTop: 4 }}>Average NPS (0–10)</div>
-        </div>
-        <div style={{ padding: "16px 20px", background: "#ffffff", borderRadius: 8, border: "1px solid #d0d7de", minWidth: 140 }}>
-          <div style={{ fontSize: 24, fontWeight: 700, color: "#24292f" }}>{withComment}</div>
-          <div style={{ fontSize: 12, color: "#57606a", marginTop: 4 }}>With comments</div>
+        <div style={{ marginLeft: "auto", flexShrink: 0, minWidth: 380 }}>
+          <CategorySplitPieChart data={categoryPieData} />
         </div>
       </div>
 

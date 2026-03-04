@@ -1,17 +1,19 @@
 "use client";
 
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { useThemeReady } from "@/app/providers";
 import { Heading, HeadingLevel } from "baseui/heading";
 import { Select } from "baseui/select";
 import { SELECT_FORM_FIELD_OVERRIDES } from "@/components/FormField";
 import { SummaryCards } from "@/components/SummaryCards";
 import { SubCategoryChart } from "@/components/PhaseJourneyCharts";
+import { CategorySplitPieChart } from "@/components/CategorySplitPieChart";
 import { FeedbackTiles } from "@/components/FeedbackTiles";
 import { TicketDetailModal } from "@/components/TicketDetailModal";
 import { AskSection } from "@/components/AskSection";
 import type { FeedbackRow } from "@/app/types";
+import { getThemesForSubCategory, assignRowToTheme } from "@/app/problemThemes";
 
 const CATEGORIES = ["Attendance & Registers", "Behaviour Management", "Classroom Management"] as const;
 
@@ -20,21 +22,28 @@ function filterData(
   filters: {
     category: string | null;
     subCategory: string | null;
+    theme: string | null;
   }
 ): FeedbackRow[] {
   let out = data;
   if (filters.category) out = out.filter((r) => r.top_level_category === filters.category);
   if (filters.subCategory) out = out.filter((r) => r.sub_category === filters.subCategory);
+  if (filters.theme && filters.category && filters.subCategory) {
+    const themes = getThemesForSubCategory(filters.category, filters.subCategory);
+    if (themes.length > 0) out = out.filter((r) => assignRowToTheme(r, themes) === filters.theme);
+  }
   return out;
 }
 
 export default function CategoriesView() {
   const themeReady = useThemeReady();
   const searchParams = useSearchParams();
+  const router = useRouter();
   const [data, setData] = useState<FeedbackRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState<string | null>(null);
   const [subCategory, setSubCategory] = useState<string | null>(null);
+  const [theme, setTheme] = useState<string | null>(null);
   const [selectedTicket, setSelectedTicket] = useState<FeedbackRow | null>(null);
   const [askLoading, setAskLoading] = useState(false);
   const [askAnswer, setAskAnswer] = useState<string | null>(null);
@@ -43,8 +52,10 @@ export default function CategoriesView() {
     if (!searchParams) return;
     const cat = searchParams.get("category");
     const sub = searchParams.get("sub");
+    const th = searchParams.get("theme");
     if (cat) setCategory(cat);
     if (sub) setSubCategory(sub);
+    if (th && th.trim()) setTheme(th); else setTheme(null);
   }, [searchParams]);
 
   useEffect(() => {
@@ -55,9 +66,14 @@ export default function CategoriesView() {
       .finally(() => setLoading(false));
   }, []);
 
+  const themesForFilter = useMemo(() => {
+    if (!category || !subCategory) return [];
+    return getThemesForSubCategory(category, subCategory);
+  }, [category, subCategory]);
+
   const filtered = useMemo(
-    () => filterData(data, { category, subCategory }),
-    [data, category, subCategory]
+    () => filterData(data, { category, subCategory, theme }),
+    [data, category, subCategory, theme]
   );
 
   const subCategoriesForCategory = useMemo(() => {
@@ -69,6 +85,15 @@ export default function CategoriesView() {
     });
     return Array.from(set).sort();
   }, [data, category]);
+
+  const categoryPieData = useMemo(() => {
+    const counts: Record<string, number> = {};
+    data.forEach((r) => {
+      const c = r.top_level_category || "Uncategorised";
+      counts[c] = (counts[c] || 0) + 1;
+    });
+    return Object.entries(counts).map(([name, count]) => ({ name, count }));
+  }, [data]);
 
   const handleAsk = useCallback(
     async (question: string) => {
@@ -103,10 +128,15 @@ export default function CategoriesView() {
   }, [category, subCategory]);
 
   const showingCategoriesLabel = useMemo(() => {
-    if (!category && !subCategory) return "All";
-    if (category && subCategory) return `${category} › ${subCategory}`;
-    return (category || subCategory) ?? "All";
-  }, [category, subCategory]);
+    const parts: string[] = [];
+    if (category) parts.push(category);
+    if (subCategory) parts.push(subCategory);
+    if (theme) {
+      const def = themesForFilter.find((t) => t.id === theme);
+      parts.push(def?.label ?? theme);
+    }
+    return parts.length ? parts.join(" › ") : "All";
+  }, [category, subCategory, theme, themesForFilter]);
 
   if (!themeReady || loading) {
     return (
@@ -125,41 +155,72 @@ export default function CategoriesView() {
         </p>
       </HeadingLevel>
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 24, marginBottom: 24, alignItems: "flex-end" }}>
-        <div style={{ minWidth: 200 }}>
-          <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#24292f", marginBottom: 4 }}>Category</label>
-          <Select
-            overrides={SELECT_FORM_FIELD_OVERRIDES}
-            options={[{ id: "__all__", label: "All categories" }, ...CATEGORIES.map((c) => ({ id: c, label: c }))]}
-            value={category ? [{ id: category, label: category }] : [{ id: "__all__", label: "All categories" }]}
-            onChange={({ value }) => {
-              const id = value[0]?.id as string;
-              setCategory(id && id !== "__all__" ? id : null);
-              setSubCategory(null);
-            }}
-            getOptionLabel={({ option }) => (option?.label as string) ?? ""}
-            getValueLabel={({ option }) => (option?.label as string) ?? "All categories"}
-            placeholder="All categories"
-          />
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 24, alignItems: "flex-start", marginBottom: 24 }}>
+        <div style={{ flex: "1 1 0", minWidth: 0 }}>
+          <div style={{ display: "flex", gap: 24, alignItems: "flex-end", marginBottom: 24 }}>
+            <div style={{ minWidth: 200 }}>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#24292f", marginBottom: 4 }}>Category</label>
+              <Select
+                overrides={SELECT_FORM_FIELD_OVERRIDES}
+                options={[{ id: "__all__", label: "All categories" }, ...CATEGORIES.map((c) => ({ id: c, label: c }))]}
+                value={category ? [{ id: category, label: category }] : [{ id: "__all__", label: "All categories" }]}
+                onChange={({ value }) => {
+                  const id = value[0]?.id as string;
+                  setCategory(id && id !== "__all__" ? id : null);
+                  setSubCategory(null);
+                  setTheme(null);
+                }}
+                getOptionLabel={({ option }) => (option?.label as string) ?? ""}
+                getValueLabel={({ option }) => (option?.label as string) ?? "All categories"}
+                placeholder="All categories"
+              />
+            </div>
+            <div style={{ minWidth: 220 }}>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#24292f", marginBottom: 4 }}>Sub-category</label>
+              <Select
+                overrides={SELECT_FORM_FIELD_OVERRIDES}
+                options={[{ id: "__all__", label: "All sub-categories" }, ...subCategoriesForCategory.map((s) => ({ id: s, label: s }))]}
+                value={subCategory ? [{ id: subCategory, label: subCategory }] : [{ id: "__all__", label: "All sub-categories" }]}
+                onChange={({ value }) => {
+                  const id = value[0]?.id as string;
+                  setSubCategory(id && id !== "__all__" ? id : null);
+                  setTheme(null);
+                }}
+                getOptionLabel={({ option }) => (option?.label as string) ?? ""}
+                getValueLabel={({ option }) => (option?.label as string) ?? "All sub-categories"}
+                placeholder="All sub-categories"
+              />
+            </div>
+            {themesForFilter.length > 0 && (
+              <div style={{ minWidth: 220 }}>
+                <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#24292f", marginBottom: 4 }}>Theme</label>
+                <Select
+                  overrides={SELECT_FORM_FIELD_OVERRIDES}
+                  options={[{ id: "__all__", label: "All themes" }, ...themesForFilter.map((t) => ({ id: t.id, label: t.label }))]}
+                  value={theme ? [{ id: theme, label: themesForFilter.find((t) => t.id === theme)?.label ?? theme }] : [{ id: "__all__", label: "All themes" }]}
+                  onChange={({ value }) => {
+                    const id = value[0]?.id as string;
+                    const newTheme = id && id !== "__all__" ? id : null;
+                    setTheme(newTheme);
+                    if (category && subCategory) {
+                      const params = new URLSearchParams({ category, sub: subCategory });
+                      if (newTheme) params.set("theme", newTheme);
+                      router.replace(`/categories?${params.toString()}`);
+                    }
+                  }}
+                  getOptionLabel={({ option }) => (option?.label as string) ?? ""}
+                  getValueLabel={({ option }) => (option?.label as string) ?? "All themes"}
+                  placeholder="All themes"
+                />
+              </div>
+            )}
+          </div>
+          <SummaryCards data={filtered} />
         </div>
-        <div style={{ minWidth: 220 }}>
-          <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#24292f", marginBottom: 4 }}>Sub-category</label>
-          <Select
-            overrides={SELECT_FORM_FIELD_OVERRIDES}
-            options={[{ id: "__all__", label: "All sub-categories" }, ...subCategoriesForCategory.map((s) => ({ id: s, label: s }))]}
-            value={subCategory ? [{ id: subCategory, label: subCategory }] : [{ id: "__all__", label: "All sub-categories" }]}
-            onChange={({ value }) => {
-              const id = value[0]?.id as string;
-              setSubCategory(id && id !== "__all__" ? id : null);
-            }}
-            getOptionLabel={({ option }) => (option?.label as string) ?? ""}
-            getValueLabel={({ option }) => (option?.label as string) ?? "All sub-categories"}
-            placeholder="All sub-categories"
-          />
+        <div style={{ marginLeft: "auto", flexShrink: 0, minWidth: 380 }}>
+          <CategorySplitPieChart data={categoryPieData} />
         </div>
       </div>
-
-      <SummaryCards data={filtered} />
 
       <div style={{ width: "100%", marginBottom: 24 }}>
         <SubCategoryChart
