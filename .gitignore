@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Next.js
+dashboard/.next/
+out/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+
+# IDE / editor
+.cursor/
+
+# Debug
+npm-debug.log*
+*.tsbuildinfo
+next-env.d.ts

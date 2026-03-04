@@ -1,0 +1,83 @@
+================================================================================
+SUGGESTED SUB-CATEGORIES BY TOP-LEVEL CATEGORY
+================================================================================
+
+--- Attendance & Registers (n=1238) ---
+Top words: register, attendance, absence, staff, registers, students, school, arbor, time, planned, all, marks, add, able, day, student, absences, club, report, mark, bulk, date, way, child, option
+Top bigrams: planned absence, planned absences, staff absence, bulk edit, roll call, edit marks, attendance marks, take register, am pm, year group, time consuming, being able, really helpful, custom report, staff member, attendance codes, member staff, absence notes, really useful, evacuation register
+
+  [1] Notes pull through on the pre-planned absence
+  [2] Exams
+  [3] Recurring planned absences
+  [4] Make Daily Attendance and Roll Call Marks default to chosen settings
+  [5] Lesson engagement - still allocate points for students on educational visits
+  [6] Students Attendance - Statistic page
+  [7] Pending Absence records - send an acknowledgement once absence authorised
+  [8] Remove automatic (N) function
+  [9] Registers
+  [10] Ability to sign children out from wrap around care
+  [11] Set REPEAT staff absence
+  [12] Late minutes
+  [13] Cover
+  [14] Make Continuous Absence List based on Statutory Roll Call register marks
+  [15] Planned Absence option in Drop down on Bulk edit in Trips
+
+--- Behaviour Management (n=737) ---
+Top words: behaviour, students, report, staff, detention, student, arbor, points, incident, able, all, detentions, time, incidents, add, year, school, set, notes, custom, parents, currently, pastoral, data, use
+Top bigrams: behaviour incidents, behaviour incident, custom report, behaviour points, pastoral notes, year group, house points, report writer, being able, first aid, member staff, really useful, academic year, drop down, all students, custom reports, first name, report card, time consuming, detention session
+
+  [1] Seating Plan
+  [2] Behavioural Incident Logging
+  [3] More Control over permissions
+  [4] First Aid Notes
+  [5] Behaviour list should show the current student list only
+  [6] Negative points
+  [7] Choose default contact phone number
+  [8] Different Groups for Emergency Alert Types
+  [9] Create single incident via MyClassroom
+  [10] Behaviour Incident Reporting
+  [11] EMail alert foe Behaviour Incidents
+  [12] Behaviour
+  [13] Choosing whether Level 0 Neutral Events are positive/negative
+  [14] Behaviour Incident reporting
+  [15] Recording Physical intervention - URGENT Update required
+
+--- Classroom Management (n=403) ---
+Top words: lesson, seating, plan, time, room, students, staff, cover, classroom, able, arbor, student, timetable, all, plans, exam, school, lessons, class, teacher, add, year, change, show, currently
+Top bigrams: seating plan, seating plans, lesson dashboard, exam seating, cover lesson, year group, being able, member staff, room changes, classroom seating, drag drop, time consuming, drop down, access arrangements, academic year, every time, duplicate seating, computer reader, lesson attendance, really helpful
+
+  [1] Button for other teachers in My Classroom: Invite author to delete (redundant) seating layouts
+  [2] Spring census remove table 32
+  [3] My Classroom Seating plans
+  [4] Duplicating exam seating plans - needs to pick up centre start times for exams
+  [5] Seating Plan - Extra informtion
+  [6] Seeing Lesson and Room
+  [7] MYClassroom
+  [8] Room Numbers
+  [9] Facility to allow copying of seating plans between classrooms
+  [10] Seating charts for intervention sessions
+  [11] Re-rooming classrooms
+  [12] Attachments to be available in Lesson Dashboard
+  [13] Cover Feature showing on students TT
+  [14] API for room changes.
+  [15] Assignment - schedule send
+
+--- Other (n=7768) ---
+Top words: school, parents, arbor, report, able, all, time, staff, students, year, add, student, option, email, set, custom, parent, data, currently, way, group, date, app, useful, really
+Top bigrams: custom report, academic year, year group, time consuming, school shop, being able, report cards, report writer, really helpful, really useful, report card, parent portal, app messages, custom reports, student profile, many thanks, able add, app message, custom group, wraparound care
+
+  [1] Exporting seating plans
+  [2] be able to archive old medical events
+  [3] To add exams functionality to the student app
+  [4] Collation in Custom Report writer to open in different tabs in a livefeed the same as it does for an
+  [5] 100% Termly and Yearly Certificate
+  [6] the room booking system
+  [7] Unnecessary EDI amendments files being created
+  [8] Wrapround Club Bookings
+  [9] Mailbox - Mark Messages unread or be able to colour code/flag
+  [10] Adding a decline option to trips
+  [11] School shop purchased
+  [12] Parent log in for multiple schools
+  [13] Mail merge emails
+  [14] Staff Training Records
+  [15] Wrap around clubs

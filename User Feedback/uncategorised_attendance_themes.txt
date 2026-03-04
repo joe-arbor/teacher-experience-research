@@ -1,0 +1,420 @@
+================================================================================
+UNCATEGORISED ATTENDANCE – THEME ANALYSIS
+================================================================================
+Total rows: 931
+
+--- Top single words (theme hints) ---
+  1277  attendance
+   508  register
+   495  absence
+   387  marks
+   359  registers
+   336  school
+   285  students
+   278  planned
+   272  time
+   254  arbor
+   243  all
+   226  day
+   224  bulk
+   223  mark
+   210  report
+   206  add
+   204  absences
+   189  year
+   189  student
+   175  lesson
+   170  staff
+   158  child
+   152  date
+   152  notes
+   151  edit
+   150  code
+   147  late
+   145  option
+   144  currently
+   137  codes
+   135  trip
+   133  way
+   133  class
+   128  useful
+   128  absent
+   127  present
+   126  children
+   125  really
+   118  page
+   118  show
+   117  data
+   117  helpful
+   116  week
+   116  parents
+   104  days
+   104  use
+   102  group
+    98  possible
+    98  know
+    98  whole
+    96  change
+    96  go
+    96  call
+    94  through
+    94  note
+    92  pupils
+    90  etc
+    88  teachers
+    88  view
+    87  filter
+
+--- Top bigrams (theme hints) ---
+   166  planned absence
+   118  bulk edit
+   102  planned absences
+    95  attendance marks
+    73  roll call
+    67  edit marks
+    54  attendance certificate
+    48  year group
+    44  attendance data
+    41  whole school
+    40  time consuming
+    35  take register
+    35  attendance codes
+    35  really helpful
+    33  marks advanced
+    32  attendance fines
+    31  call marks
+    30  absence notes
+    30  students attendance
+    30  daily attendance
+    29  attendance officer
+    28  lesson attendance
+    27  attendance mark
+    27  evacuation register
+    27  custom report
+    26  attendance certificates
+    26  edit attendance
+    25  attendance notes
+    24  emergency evacuation
+    24  incomplete registers
+    24  sixth form
+    23  statutory attendance
+    22  really useful
+    22  attendance dashboard
+    22  minutes late
+    22  absentees date
+    22  attendance statistics
+    22  parent portal
+    21  attendance registers
+    21  register marks
+    20  school trip
+    20  academic year
+    20  lot time
+    19  taking register
+    19  child absent
+    19  half term
+    17  many thanks
+    17  attendance officers
+    17  whole day
+    17  year groups
+
+--- Sample of summaries + comment preview (for naming themes) ---
+
+[1] attendance
+    Comment: Would it be possible to have current percent attendance and last year attendance on the absentee by date page please. I would really save attendance time
+
+[2] Attendance on Fridays
+    Comment: We would like to able to report on students that have three or more Friday off but present all week
+
+[3] Notes pull through on the pre-planned absence
+    Comment: Please could the notes be pulled through from pre-planned absence onto the register.   Instead of just showing as authorised/ ill etc it would be much better if it pulled through the reason e.g. 'wedding 27-30th' or 'vomited - off for 48hrs' etc.
+
+[4] Locking attendance marks
+    Comment: Could there be an option locking in attendance marks so only Attendance Officer or appropriate admin may change them. When putting in absence marks for any reason, teachers have the ability to change the pre-existing marks in the register.
+
+[5] Absence fines
+    Comment: The guidance has changed so fines are for 5 days of unauthorised absences in a ten week period. I think Arbor is still set to the old guidance of 3 days so children are coming up as needing a fine when they are not meeting the threshold.   Also when you put a comment in the regis…
+
+[6] How are you feeling included in the morning and afternoon register to track emotional wellbeing
+    Comment: Good morning,   My name is Lara and I am the pastoral lead at Beechfield School.   I have talked with Richard in the morning regarding how it could be beneficial to incorporate something like checking in how pupils feel when taking the register. At school we use zones of regulati…
+
+[7] Take registers only' as a permission option
+    Comment: We regularly have peripatetic teachers from outside companies for subjects such as sport, art, music etc. Paper registers are fraught with pitfalls and risks and is the reason all schools have moved away from them (apart from convenience). As these teachers are not employed by th…
+
+[8] When running a trip - make marking V in attendance easy
+    Comment: It is currently duplicate workload because we are making a trip - which is great and shows teachers where the pupil is and creates a register etc for the trip   However to mark the pupils V in attendance to say school trip we have to re-write the names - I appreciate it shouldn't…
+
+[9] Register override issues
+    Comment: When planned absences/illness marks are put in prior to the register being taken they are being overridden by teachers taking the register. Is there anyway this can be resolved? I have set the mark to stay before the registers been opened but this doesn‚Äôt resolve the issue if a…
+
+[10] Custom Attendance Codes
+    Comment: Having the ability to use custom attendance codes which then map to a DofE attendance code for census returns etc would be very helpful.   For example, in our previous MiS we could record lates for transport disruption differently which gave us really useful data. We were able to…
+
+[11] Adding attendance notes
+    Comment: It takes too long to add attendance notes in Arbor - there are way too many different steps. We have to:   1. go to Bulk Edit Marks >   2. input the appropriate filters for date and group >   3. find the student in the list >   4. add a present mark from the drop down >   5. add …
+
+[12] Emergency Evacuation Register
+    Comment: Could this evacuation report be made to show just the absent pupils, because this shows all registers and we print this out twice a day.
+
+[13] Date range to and from in Clubs Daily Summary
+    Comment: It would help it you could put in a date range to and from in the Club Daily Summary to show attendance for each session past so far.
+
+[14] Adding ability to report on attendance codes "by Day of the Week" like Present etc.
+    Comment: I have been asked to look at how many lates there are by day of the week, unfortunately this isn't possible currently as you can only report on Present, Authorised Absent, Unauthorised Absent and Absent. It would be useful to be able to choose a code (like Lates) and then by day …
+
+[15] change the colours
+    Comment: Hello,   Please look in to changing the colours used on the registers. I can not understand why names that get highlighted in Red are actually in school (lateness) but those who we have said are not in due to a planned absence show up orange. It would make a lot more sense for re…
+
+[16] Attendance fines - filter by attendance absence codes
+    Comment: Please can there be a filter on the attendance fines page so schools can only fine the G codes
+
+[17] Current Attendance included as a merge field
+    Comment: Please could you include Current Attendance Percentage as a merge field in the emails/letters template. At present, we have to type these in individually, which is extremely time consuming.
+
+[18] Attendance marks
+    Comment: Hello, when putting in attendance marks, you can only put in comments when you've put in another mark other than present. It would be useful if there was also an option for when a child is present for you to be able to put in a comment.
+
+[19] Record Planned Absence- Siblings
+    Comment: Hello,   It would like really good, if when recording a planned absence, you can also include/ tag another child (sibling). So you don't have to repeat yourself recording the absence on both children.
+
+[20] Adding UDF Information To Registers
+    Comment: Good afternoon,   We would like to add Reading Ages to the registers in Arbor, but at the moment it isn't possible as UDFs are not included in what can be shown. Can you please consider adding this.
+
+[21] Trip - automically change lesson mark to V if on trip
+    Comment: Hi,   It would be great if Arbor could automatically insert a V mark across the time a student is on a trip. It takes time to put in a planned absence as a trip for a group.   Is this something that can be done?
+
+[22] Bulk adding lates
+    Comment: If there was a specific button, like planned absences, where you can add late marks and add minutes at the same time.   When I do late gates I might get 5/6 students coming in through the gates at the same time, but I have to individually add them through bulk edit marks to be ab…
+
+[23] Pupil absence notifications
+    Comment: We would like to set up absence notifications for pupils.   We already use various reports monitoring absence/persistent absentees, this request is specifically to set up notifications.   For example, if a pupil has 10 absences in a 6 week period, we would like a notification/ale…
+
+[24] On daily attendance could codes be shown instead on the red X
+    Comment: Could the codes be shown when you are looking at daily attendance rather than the red x, for example if they are on a family holiday, you have to click into the pupil to see this, same with U codes.
+
+[25] attendance certificate
+    Comment: It would be really useful to be able to view the children's attendance certificate without having to download it or view their attendance percentage without having to download the attendance certificate.
+
+[26] Raw Attendance Marks - Unopened
+    Comment: Please can there be a specific marks dropdown that allows to search ALL registers regardless of opened/unopened for missing marks "-"
+
+[27] Record Planned Absence Notes
+    Comment: Currently you can write notes in Record Planned Absence feature in Student Profile to explain reasons for absence.   These notes do not appear, however, on the actual date of the absence in Attendance.   It would be really useful if they did.
+
+[28] Attendance
+    Comment: When a student is marked present this should reflect on all registers
+
+[29] Functional attendance notes
+    Comment: We need to keep track of where students are during the day. If a student has a visiting professional who will work with them 1:1 in a meeting room, for example, we need to know that they are there; we need the register to reflect this, so we can find them in an emergency, etc.   …
+
+[30] Add Planned Absence to drop down on Bulk Edit Attendance
+    Comment: It would save a great deal of time if it was possible to add Planned Absences via the Bulk Edit Attendance page.
+
+[31] Auto Absence - Edit
+    Comment: Hi   It would be handy to have an 'edit' button, I am finding the messages do not always transcribe correctly, especially names. It would be helpful if we could make slight adjustments before sending it to their attendance record.   Thank you for working on this feature, I know i…
+
+[32] Attendance Dashboard - Attendance Statistics above Future planned Absences
+    Comment: If a student has multiple future planned absences the attendance statistics can be a far distance down the page. This should be at the top with the future planned absences under. This would make things easier for staff when they need to pull attendance percentages.
+
+[33] Attendance a CRW
+    Comment: Please can you seperate AM lates from P1 lates in CRW. Currently you cannot report on if a student is late to P1. Being later to school first thing is very different from being late to other lessons.
+
+[34] To be able to remove a note that you have added to the registers
+    Comment: Being able to delete notes the have been wrongly inputted on the registers.   Sometimes we might write a note on the registers on the wrong child and it needs to be removed. At the moment the note can only be removed on the day of the registers but if we have added a note on a fu…
+
+[35] Pending Absence records - send an acknowledgement once absence authorised
+    Comment: Could we have an option to send an in-app acknowledgement back to the parent when a request has been processed and OK'd. We have already set up a template to send out once records have been OK'd but its not so easy to find the record again once it's been processed. It would be ni…
+
+[36] Filtering Attendance Codes in Custom Reports
+    Comment: I regularly utilise the Custom Report feature to generate attendance reports, which I then use to communicate with parents via letters or emails.   To streamline this process, it would be incredibly beneficial if the Custom Report functionality allowed us to exclude specific atte…
+
+[37] Restricted Attendance Marks
+    Comment: The ability to restrict attendance marks to just present, late (L or U) or N is great. However, we would like to be able to use the X code with our Sixth Form pupils as quite often a teacher will tell certain pupils in their class that they don't have to attend as they have alrea…
+
+[38] When one planned absence clashes with another
+    Comment: Having to remove a planned absence that occurs for a a lesson or two, in order ot add a planned absence for the whole day, or one for a day in order to enter one for a week, is a considerable pain, especially if the new absence involves a large number of people.   Please could yo…
+
+[39] add absence notes within a custom report for attendance
+    Comment: We have created a custom attendance report for our diffent year groups within this we would like to add absence notes which would greatly free up a huge amount of time having to do this manually each week. The reports we have created are:   https://weald-of-kent-grammar-school.uk…
+
+[40] Putting planned absences in through trips
+    Comment: It would be great if once a trip was finalised and you had all the student names you could put the planned absence in for that trip in the same area.
+
+[41] In Attendance bulk update page for a year group or large set of students do not automatically return to top of page when amendment made to a mark
+    Comment: When a note is added or specific change made it takes you to the top of the list again rather than remain where you were on page. This make it frustrating and easy to lose your place when updating daily registers
+
+[42] link a trip register with the daily register
+    Comment: we often have a half day trip, we create it as a trip in Arbor, and lunch orders are taken the day before.   if a trip register is taken it does not link to the days register (am or pm or both) which means I must go and enter the data into the daily register too.   firstly this i…
+
+[43] Attendance breakdown on homepage
+    Comment: It would be really useful for the number of pupils shown as enrolled could be broken down into children acutally enrolled in classes and guest pupils as the current total lumps them together and does not give an accurate number who should be in school. My Head Teacher really woul…
+
+[44] Register Notes
+    Comment: Please can it always be possible to add note to a register from "Bulk edit marks", for any period, even if that class register hasn't been opened by the class teacher yet.   Currently marks can be added for all, but notes can only be added on registers that have been opened. To a…
+
+[45] More privacy on registers
+    Comment: I wanted to flag up again that it is would really be worth looking into changing the way registers display so that teachers don't have to worry about children seeing reasons for absence on their screen/they can put the register up on the whiteboard. Often, absence reasons are pri…
+
+[46] Monthly attendance and late letters produced by report on scholar pack
+    Comment: We currently produce these monthly to be sent to parents. However can it be made more flexible?  At the moment it is set up to be sent to all prime guardians and we have no flexibility on this - and cannot stop it producing the letters. We can opt not to send a paper copy.  Howev…
+
+[47] Trips integrating with attendance
+    Comment: It would be useful if the trips area communicated with attendance and alerted on the registers that the students were on a trip. Or even better had a feature that automatically added a planned absence for the trip times that could be enabled or disabled.
+
+[48] Evacuation report for Nursery Sessions
+    Comment: Hi,  Is there a way that the evacuation report could be changed to show the actual children who should be in nursery not the children in the class.  For nursery it shows -"no mark recorded" for children who are not in. However those children are not due in for that session or the…
+
+[49] Fire register order
+    Comment: Our Fire registers currently print out by Reg form and Year order - B1, B2, S1, S2 etc. It would be better if they could print out by House and Registration Group order. B1, B2, 3 4 etc then the next house S1, S2 etc. This way the house registration groups will be in order and wo…
+
+[50] Please include Trips as one of the items that is shown in bulk edit marks advanced
+    Comment: ie currently you only show - lessons, interventions and internal exclusions, please include trips also  this would get around the fact that currently Trips is a useless feature on arbor, as it does not talk to the registers.  I have queried with this with you before and been told…
+
+[51] Attendance certificate
+    Comment: Attendance note to be included on the parent portal. As staff you can see all the notes. We would like parents to see all information regarding their child's attendance. i think it is a good feature to have the same information across the board.
+
+[52] Simplify Timetabling
+    Comment: When building programmes and courses for your timetable, it is extremely frustrating that when you are timetabling a lesson, you have to input the correct times for the lesson every time rather than simply selecting a dropdown which states 'lesson 1' or 'lesson 3'.  This would be…
+
+[53] Arbor AI error message email
+    Comment: Would be great if arbor could send an email with any error messages regarding the student absence function rather than having to manually check for errors every day
+
+[54] collate registers
+    Comment: As administrator I oversee all the registers and for each I need to log in via the drop down menus each time. I need to be able to flick between easily and not be stuck in a class profile. either make the dropdown box accessible to click back a couple of steps or allow classes to…
+
+[55] safeguarding
+    Comment: have the number of total children in the class and the number of children marked as present at the bottom of the register
+
+[56] Attendance by subject for A level students
+    Comment: Say I want to know what Fred Smith's attendance is to his three individual A level subjects of History, Biology and Maths. At present I can look up each class and then find the attendance figure there, but ideally we would like to get this data via Statistics on the student profi…
+
+[57] P code attendance marks should appear on absentees list
+    Comment: Children who are out at a sporting event this afternoon have been marked on the register as a 'P' code, as they are within school's care but not currently on-site. These sporting events are different to educational visits (V codes) and we would like to continue using the code as …
+
+[58] Attendance and Meals on same register
+    Comment: To input meals in the morning, you have to essentially complete 2 separate registers. Could these be joined so next to inputting attendance you can select their meal as well in a column on the same page.
+
+[59] Auto Absence
+    Comment: We have the automated absence package and wanted to highlight a feature it could really do with. A students mother had left a message for Sobe Umeokana, however this message had linked with siblings account and not his. I had to reject the message and manually input the details o…
+
+[60] Unopened registers
+    Comment: During the summer term when students are either on Study Leave or not required to attend school we allocate a bulk absence mark of (S or #). Obviously this means teachers don't need to take registers but this leaves all the registers for this time as unopened and blocks you from …
+
+[61] Evacuation report for Nursery Sessions
+    Comment: Hi,   Is there a way that the evacuation report could be changed to show the actual children who should be in nursery not the children in the class.   For nursery it shows -"no mark recorded" for children who are not in. However those children are not due in for that session or t…
+
+[62] Allow text selection on register page
+    Comment: Makes it easier to copy and paste names so I get the spelling of children's name correct.
+
+[63] edit whole day register
+    Comment: To be able to open up and the afternoon registers to add illness whilst doing the morning registers. Without having to go through roll call
+
+[64] Dashboard
+    Comment: It would be good if the dashboard gave accurate information, it currently shows all children including the nursery who are not of statuary age. The only way to view the correct information is to filter out the babies and nursery. It should be on the main school only and then ever…
+
+[65] Letter mailmerge
+    Comment: It would be good to have attendance data i.e % attendance, sessions authorised/unauthorised as a merge field when writing letters on Arbor, currently it doesn't appear to have this as a merge field.
+
+[66] Sixth Form Attendance
+    Comment: When sixth form parents are viewing attendance they are only able to see the statutory attendance however, a lot of our students don't have the Am/Pm marks as they don't have a lesson. Is it possible to see through the parents app the lesson by lesson attendance so they can accur…
+
+[67] Roll Call Setup - different year groups
+    Comment: We would like to be able to have a different roll call setup for different year groups. For example, we would want to set up AM and PM sessions at different times for our sixth form compared to lower school.   This is because some sixth form students may not have a lesson first p…
+
+[68] Planned Absence
+    Comment: Hi   When you input the start date of the planned absence - if the end date could change so it's the same as the start date - then it just needs to be changed if it's more than a one day absence.   Also, when over-typing the date, if you type more than one digit, the second digit…
+
+[69] KS2 scores entry
+    Comment: At the moment KS2 scores can only be uploaded via a CTF, can this be changed? Can you make it possible to enter KS2 scores manually as if there are duplicate entries for a pupil in a file the file will not upload. This is very frustrating as I have for example a pupil who was dua…
+
+[70] Parent notification of attendance absence rejection
+    Comment: In the parent reporting absence feature, when I reject/approve, there is a box for rejection reason. It would be better if the rejection reason is sent to the parents so they can see why the absence has been rejected.
+
+[71] Run a report of childrens individual reasons of absence
+    Comment: As an attendance officer I run a fortnightly report which I present to my deputy head teacher and the educational welfare officer.   I run a report with children's attendance % to date.   At the moment I can receive for example this below:   Unauthorised Absence (O): 2 sessions (…
+
+[72] Club registers
+    Comment: As a school we would like to see club registers integrated into school registers as a add on like interventions.   School clubs are important aid to schooling and coming soon Ofsted will like to be able to see how clubs help the disadvantaged children. Also I feel it is a safegua…
+
+[73] Seeing attendance
+    Comment: There should be a way to see both roll call AND lesson registration marks on the same page. Currently you need to flick between two pages.
+
+[74] Continuous attendance reports
+    Comment: When running reports using continuous/consecutive roll call marks, Arbor counts the largest amount rather than the most recent. It would be helpful to have the most recent count of consecutive attendance.
+
+[75] On record planned absence make it compulsory to add a date rather than default to todays date
+    Comment: Hi   Can I suggest that On record planned absence make it compulsory to add a date rather than default to today's date.   We have had numerous occasions where a member of the team has put a planned absence on to current day by mistake and we have had to go and change it and corre…
+
+[76] Course Attendance Certificate for print - Pre Built
+    Comment: Hi it would be great if you could build a printable attendance certificate BY COURSE like you already have for the standard attendance certificate.   Currently to get this information we have to build a custom report - then build ad hoc columns on marksheets - then input the data…
+
+[77] opening all registers in one go
+    Comment: Please could you add something that opens all the morning or afternoon registers in one go, or even with tick nboxes to select certain registers to ,open at the same time
+
+[78] Week to View Registers
+    Comment: This would be really good if we could see week per view registers - AM an PM for the whole school. At the moment it is so time consuming to have to click into each registration per class - AM or PM as we cannot see the history of a child's attendance or absence as an overview. Th…
+
+[79] Today's Attendance
+    Comment: It would be handy to move Today's Attendance above Calendar on the left hand bar so that staff can easily see if a child is in or not.   Thank you
+
+[80] Custom Groups - New year set up - automatic Criterion
+    Comment: As you can copy Custom Groups and members in the new year set up, we have just discovered that it does not copy the Automatic Criterion. We use this function to filter or exclude certain students from custom groups, and therefore it would be great to copy these as well for curren…
+
+[81] A way of flagging irregular attenders for additional support on the take register page rather than only on lesson dashboard.
+    Comment: I am trying to add pastoral notes (pinned) to make very visible those children who require extra support for either SEND or Irregular attendance. I can see it flags on lesson dashboard but not on the actual register page (past weeks attendance shows on there).   Is this already b…
+
+[82] Parents to be able to cancel free breakfast club
+    Comment: It would be really helpful if parents were able to cancel bookings for free breakfast club. Today for example, we had 61 children booked on and only 35 turn up. Parents very rarely contact us to cancel, but if they could do it themselves on the portal, it would really help us to …
+
+[83] Allow Late Marks to be input from Sign In App
+    Comment: Allow late marks (lunch choices would also be useful) to be updated from Sign In App. This was a feature of ScholarPack and has created more work for our office now it is not available.   Long term it would be useful for arbor to have it's own sign in app linked to the system. Th…
+
+[84] Absence follow up
+    Comment: When using the absence follow up slide over menu for an individual student, it does not allow you to choose in app message only a text message. Also doesn't seem to let you send an email when you untick the mobile phone box.
+
+[85] Absentees by Date
+    Comment: Please can missing marks be included in the Missing Marks Report? We use this report as part of our Evacuation Protocol to capture which children aren't at school. Unless teachers record an 'N' mark the blank register entries are not included on the report and therefore would cau…
+
+[86] Delete planned absences from student profile page
+    Comment: Instead of having to go into the Planned Absences page for all students, it would make more sense to be able to bulk delete planned absences from the student's profile page as well.
+
+[87] Absence Recording Process
+    Comment: I am writing to highlight some challenges we are currently experiencing with the absence recording process, which we believe could benefit from improvement.   When a child is absent for the entire day, it is important that the procedure for recording this is as quick and efficien…
+
+[88] Take Register
+    Comment: 1. A number showing the students that are marked present at the top would be helpful to cross check with the number of students actually in the room to help avoid errors.   2. Can we have the ability to click on a student and go to their details/information and set incidents dire…
+
+[89] Marking absences for the whole day
+    Comment: When marking a child absent for the day , it is essential the process is as speedy and efficient as possible   After being informed of a same day absence by the parent, we are unable to mark this absence for both AM and PM sessions. To do this, we are having to open two separate …
+
+[90] Upgrade My Students on Attendance Dashboard to pull though students from a custom report
+    Comment: Arbor Home page - Attendance Dashboard - Whole School - very useful   Arbor Home page - Attendance Dashboard - MyStudents - shows random data of students I do not work directly with!   My Students are showing 323 students - seems to be a mixture of different reports, some of whic…
+
+[91] Roll Call Setup - Ability to set different times to different days of the week
+    Comment: Currently in SIMS lesson monitor it is possible to have different times on different days for the PM roll call. This is used because two days per week the students finish earlier so the pm mark is earlier.
+
+[92] Planned Absences
+    Comment: Currently planned absences will only go in to the registers once they have all been opened, otherwise teachers are unable to see these marks and can override them. Thus meaning that it is causing doable the work for attendance admin to check that this hasn't happened and that all…
+
+[93] Urgent Improvement Required to Fire Evacuation Register
+    Comment: Hi,   We are a primary with 1 registration in the morning and 1 in the afternoon. We have children on the C2 (part-time timetable) attendance code. When they arrive mid morning or mid pm, they must remain on the C2 code and we must enter a note of the arrival time. The time arriv…
+
+[94] input reasons for absence vanishing
+    Comment: often reception have taken a call and input the reason for pupil absence and the teacher then overwrites the mark and this in turn removes the reason we have input, sometimes with the same absence mark! (per audit history) Please can the original 'notes' stay on register marks or…
+
+[95] Tick box for register comments to be carried over
+    Comment: Hello   Can you please add a tick box for when comments are added to the register that these are then carried over to the afternoon.
+
+[96] Add another box to Arbor dashboard
+    Comment: Hi   Please can you add another box on the dashboard which shows data for statutory pupils only (Years 1,2,3,4,5,6).   I would like to see the attendance figures for statutory pupils, the same type of box you show the attendance figures for all enrolled pupils.   Thank you.
+
+[97] Attendance Monitoring for Interventions
+    Comment: Hi,   We currently use Interventions for students being sent anywhere that isn't their regular classroom, reasons vary, it could be due to their support needs such as anxiety or it could be due to an incident that has taken place in school to name a few. The issue we have is that…
+
+[98] Parent to be able to view club attendance mark on parent app
+    Comment: The attendance section on both the app and browser shows attendance marks, but unfortunately, there isn‚Äôt currently a feature in the system to display club attendance.   Please bring a new feature in whereby a parent can view whether their child has attended an after school clu…
+
+[99] Ability to send auto absence notifications to parents of Sixth Form students with an N in the register
+    Comment: Be able to set up an email trigger so at the end of each day or at lunch time (being able to specify when they are sent would be useful) to primary guardians of any students with an N mark in the register for any lessons. The email should have merge fields to identify which lesso…
+
+[100] Different colour watch face for Late & U Code
+    Comment: Please can you have a different colour clock face for a Late Mark and a U Code.   It would be easier than looking on each clock face to find U Codes.   thanks   Jayne

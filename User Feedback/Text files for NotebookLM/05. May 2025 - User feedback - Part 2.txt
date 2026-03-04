@@ -1,0 +1,29 @@
+Ticket: PFT-2123
+Issue id: 177829
+Module: Data & Reporting
+Summary: Custom Report Writer
+Role: Office Mangaer
+Source: Sheet1 - Row 833
+Comment: Custom report writer is a fantastic feature within Arbor, however when i have been customising some reports i have noticed that not all of the fields within the student profiles are available to add to the report. For example when creating a Medical & Dietary needs report i am unable to add the medical notes section to the report as this isn't available as an option to add. This then means that i have to manually go into every child who has a medical note to add to my report which is very time consuming. My suggestion is for all fields within the student profile be available to add to a custom report.
+
+---
+Ticket: PFT-2122
+Issue id: 177820
+Module: Attendance
+Summary: Have the number of students on the register
+Role: Business Support and Data Manager
+Source: Sheet1 - Row 834
+Comment: When taking a register it would be helpful to know the total number of students on the register, so that the teacher can do a head count to make sure that they have the correct number of students.
+
+ This would also help from a safe guarding point of view. Staff can very quickly establish that they have the correct number of students and if a register needs updating to add or remove anyone
+
+---
+Ticket: PFT-2121
+Issue id: 177817
+Module: Cover
+Summary: Set REPEAT staff absence
+Role: Cover Manager
+Source: Sheet1 - Row 835
+Comment: Just as you can set student absence to repeat every week, so it would be helpful to be able to set staff absence to repeat every week for when staff has temporary, but repeating, duties out of the classroom and off-timetable..
+
+---

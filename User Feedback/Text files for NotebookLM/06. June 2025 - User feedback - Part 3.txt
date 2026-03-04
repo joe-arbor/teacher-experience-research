@@ -1,0 +1,743 @@
+Ticket: PFT-3016
+Issue id: 181402
+Module: Admissions
+Summary: Improved enrollment process
+Role: Academy Business Manager
+Source: June 2025 - Row 1642
+Comment: The ability to send a form to new applicants who wish to subscribe to the school to be able to complete a form providing enrolment information. We currently receive over 240 applications annually and we are collecting information electronically, but this needs to be manually entered for each new applicant which is currently time consuming and prone to manual data entry error issues. We would like the ability to create a custom form that integrates straight with the pupil records. Could you let us know how soon we can expect to see this feature.
+
+---
+Ticket: PFT-3015
+Issue id: 181399
+Module: Safeguarding
+Summary: get ‘Early Help’ added to the list of status available for Child Protection
+Role: School Admin and Finance
+Source: June 2025 - Row 1643
+Comment: Is it possible to get ‘Early Help’ added to the list of status available for Child Protection?
+
+ie extend the list
+
+---
+Ticket: PFT-3014
+Issue id: 181397
+Module: Safeguarding
+Summary: Wraparound Care Summary
+Role: Unknown
+Source: June 2025 - Row 1644
+Comment: It would be very helpful to have a report that would run Wraparound Care invoices and payments on one report. Many parents need this as evidence for Universal Credit Childcare payments.
+
+---
+Ticket: PFT-3013
+Issue id: 181395
+Summary: Add 'Early Help' to Child Protecion Status list
+Role: data manager
+Source: June 2025 - Row 1645
+Comment: Additional status option for the dropdown
+
+---
+Ticket: PFT-3012
+Issue id: 181394
+Module: Core Student Record
+Summary: PHONE NUMBER SEARCH
+Role: Receptionist
+Source: June 2025 - Row 1646
+Comment: Good Morning,
+
+As a receptionist in a very busy secondary school may I kindly make a suggestion for an option to search accounts using a contact number. This feature is very useful to reception as it enables us to search accounts quickly also it enables us to make sure we have the correct student if we are not able to get clear information from parents maybe due to language barriers or other challenges whilst on the phone.
+
+Thankyou for your time
+
+Kindest Regards
+
+Wajda Riaz
+
+---
+Ticket: PFT-3011
+Issue id: 181393
+Module: Core Student Record
+Summary: Arbor does not currently have a feature to add sensitive data, which can be hidden/revealed as needed.
+Role: IT Technician
+Source: June 2025 - Row 1647
+Comment: We're looking to add a field in Arbor to contain a piece of sensitive data, such as a password/pin, that is hidden/redacted and can be clicked on to reveal the data.
+The sensitive data could be a pupils locker pin for example.
+I think this would be a really useful feature that other schools/MAT's would benefit from and utilise.
+
+---
+Ticket: PFT-3010
+Issue id: 181389
+Module: Timetable
+Summary: Add "Today" to calendar
+Role: Exams Officer
+Source: June 2025 - Row 1648
+Comment: To save having to click through, can you add an option to shortcut to [today's date]?
+With regards
+Lucy
+
+---
+Ticket: PFT-3009
+Issue id: 181380
+Module: Cover
+Summary: Cover on Teachers timetable
+Role: Cover Manager
+Source: June 2025 - Row 1649
+Comment: I was wondering if it would be possible that, when teachers are selected for Cover, that the Cover period is highlighted in red on their timetable.
+
+The reason being as the Cover could be easily missed if it doesn't stand out from the rest of the timetable.
+
+---
+Ticket: PFT-3008
+Issue id: 181378
+Module: Communications
+Summary: Disable SMS reply from parents
+Role: Office Manager
+Source: June 2025 - Row 1650
+Comment: Disable SMS replies from Parents
+
+---
+Ticket: PFT-3007
+Issue id: 181372
+Module: Timetable
+Summary: Room Bookings alerts
+Role: Cover Co-ordinator
+Source: June 2025 - Row 1651
+Comment: When we book a teacher into a lesson, it flags up a notification to say they are unavailable/teaching/absent. We can then choose to override it or not.  When I am re-rooming lessons though, it does not have the same notification.  For example, when I am using a room where I know a class is not in that day, it should flag up and say 'this room is unavailable' and I can choose to override it or not.  Instead, I can potentially book as many classes as I like into rooms and this causes many problems when trying to re-book rooms.  Please can this functionality be added?
+Emma
+
+---
+Ticket: PFT-3006
+Issue id: 181371
+Module: Report Cards
+Summary: Custom Report Cards
+Role: Data Manager
+Source: June 2025 - Row 1652
+Comment: I am livid and at my wits end with Custom Report Cards. It is such a terrible programme.
+I was already to go with Y10 reports this morning then noticed one cell wasn't centre. No matter how many times I centred the merge field within the cell and saved, it just went back to the left. I then deleted the merge field and re added which worked with the centreing issue but then the whole document changed size - all the cells changed from the neat rows i had them in to something huge and hideous. I didn't even touch the layout, only removed and re-added a merge field.
+I do not have the time to remake the document after every slight change.
+Please sort this problem out. It is not good enough. It makes a joke of your supposed motto of changing the way schools work for the better. Unfortunately it has changed the way i work and mostly for the worse.
+
+---
+Ticket: PFT-3005
+Issue id: 181367
+Module: Timetable
+Summary: AI to flag student calendar gaps and lesson clashes
+Role: Data Manager
+Source: June 2025 - Row 1653
+Comment: I’d like to leverage AI to automatically track and flag any student lesson clashes and/or gaps in their calendar, ideally, have an option to set up alerts to other staff in the organization’s hierarchical chart. I found a way how to achieve it via School > Timetable [Gaps / Clashes], however, I’m looking for ways how to optimize it.  Thx
+
+---
+Ticket: PFT-3004
+Issue id: 181366
+Module: Groups & Enrolments
+Summary: Students timetable on excel
+Role: Admin
+Source: June 2025 - Row 1654
+Comment: Currently you can have teacher's timetable downloaded on excel but not students.  I need to allocate TA's to students with EHCP in certain lesson.   I waste a lot of time trying to convert PDF to excel and then having format
+
+---
+Ticket: PFT-3003
+Issue id: 181365
+Module: Data & Reporting
+Summary: Comment column to have font size and font type (formatting)
+Role: Data Manager
+Source: June 2025 - Row 1655
+Comment: It would be a good idea to have font formatting for the the comment column or field. If it can be added to bulk actions, it would be a great idea to make sure that all comments are the same font type and size.
+
+---
+Ticket: PFT-3002
+Issue id: 181356
+Module: Communications
+Summary: Colour Codes to show on mail merge
+Role: Data Manager
+Source: June 2025 - Row 1656
+Comment: When we run this report we would like to have the colours show on the mail merge to parent not just the %.  The colour give a more visual impact on how the students attendance is.  The colours work well in the report but we do need it to show on any communication we send to parents.
+
+---
+Ticket: PFT-3001
+Issue id: 181354
+Module: Attendance
+Summary: Attaching Evidence to an In-App message
+Role: Attendance Office
+Source: June 2025 - Row 1657
+Comment: When a parent advises us of an absence, they often wish to attach medical evidence, or evidence of another nature ie  travel documents. I cannot see any option to attach a picture, which means many requests for how to do it, particularly as our previous system, Iris, had this facility. I cannot believe that an absence reporting app wouldn't have this facility.
+
+---
+Ticket: PFT-3000
+Issue id: 181343
+Module: Communications
+Summary: Bulk email funking in the Students with SEN section
+Role: School Business Manager
+Source: June 2025 - Row 1658
+Comment: Hi There,
+
+Is there a possibility to add the bulk email function in the Students with SEN page.
+
+We often have specific things just for this demographic and the Students with SEN does not come up as a group in the Communications section.
+
+The list is available in the Students with SEN page so it would then be a quick jump to sending them all an email.
+
+---
+Ticket: PFT-2999
+Issue id: 181334
+Module: Attendance
+Summary: Entering Planned Absence for Trips
+Role: Data Manager
+Source: June 2025 - Row 1659
+Comment: The functionality to add a planned absence in bulk actions from the confirmed participants screen seems like a glaringly obvious feature to have.
+
+---
+Ticket: PFT-2998
+Issue id: 181332
+Module: Behaviour
+Summary: Anti-Bullying Reporting
+Role: Assistant ICT Manager
+Source: June 2025 - Row 1660
+Comment: Utilizing both the Parent and Student apps, to report (potential/suspected) instances of bullying. The Arbor MIS portal should record; pre-screen questions to distinguish actual bullying; investigation steps; assignment of cases and automated workflow; ability to configure in alignment with local frameworks & policies; store incident details including behavior type, motivation, time of day, demographic information of students, location of event. Ability to generate reports on reported incidents.
+
+---
+Ticket: PFT-2997
+Issue id: 181330
+Module: Attendance
+Summary: register
+Role: Unknown
+Source: June 2025 - Row 1661
+Comment: one register for attendance and meals please
+
+---
+Ticket: PFT-2996
+Issue id: 181329
+Module: Meals
+Summary: Combine attendance register with dinner option
+Role: Teacher
+Source: June 2025 - Row 1662
+Comment: Combine present/absent mark with dinner option mark so you don't have to do 2 registers
+
+---
+Ticket: PFT-2995
+Issue id: 181327
+Module: Communications
+Summary: In App attachments
+Role: Headteacher
+Source: June 2025 - Row 1663
+Comment: As a school we send out App messages to parents with PDF attachments. Arbor doesn't have this feature. We use this feature all the time currently and would like Arbor to be able to have this feature.
+
+---
+Ticket: PFT-2994
+Issue id: 181326
+Module: Attendance
+Summary: Attendance and Meals on same register
+Role: Teacher
+Source: June 2025 - Row 1664
+Comment: To input meals in the morning, you have to essentially complete 2 separate registers. Could these be joined so next to inputting attendance you can select their meal as well in a column on the same page.
+
+---
+Ticket: PFT-2993
+Issue id: 181325
+Module: Communications
+Summary: Register
+Role: Teacher
+Source: June 2025 - Row 1665
+Comment: Allow children's attendance on register and dinner choices to be done at the same time to save time and allow this to be done once.
+
+---
+Ticket: PFT-2992
+Issue id: 181324
+Module: Communications
+Summary: Allow in app messages to have attachments
+Role: Teacher
+Source: June 2025 - Row 1666
+Comment: Allow pdf attachments when sending in app messages to parents, rather than sending attachments by email.
+
+---
+Ticket: PFT-2991
+Issue id: 181323
+Module: Communications
+Summary: Need to add a PDF to a In App Message
+Role: SBM
+Source: June 2025 - Row 1667
+Comment: We desperately need the ability to be able to attached a pdf to an in-app message.
+
+---
+Ticket: PFT-2990
+Issue id: 181322
+Module: Communications
+Summary: PDF attachments to in app messages
+Role: Teacher
+Source: June 2025 - Row 1668
+Comment: Update the in app message system to allow PDF to be sent with a message e.g. sending newsletters, knowledge mats etc.
+
+---
+Ticket: PFT-2989
+Issue id: 181321
+Summary: In app message attachments
+Role: Teacher
+Source: June 2025 - Row 1669
+Comment: When sending an in app message, it would be good to attach a pdf e.g. in schools sending letters or kit lists
+
+---
+Ticket: PFT-2988
+Issue id: 181318
+Module: Attendance
+Summary: Having attendance and meal selection on one screen
+Role: Caron-Leigh van Schalkwyk
+Source: June 2025 - Row 1670
+Comment: Scholarpack allows you to do this in one step. It is a step back in making teachers do this twice in Arbor and would be great if this can be merged on one screen.
+
+---
+Ticket: PFT-2987
+Issue id: 181314
+Module: Medical
+Summary: Audit Trails
+Role: PA Headteacher
+Source: June 2025 - Row 1671
+Comment: It would be helpful to see staff names and dates when edits/changes are made to an entry, for example medical notes and pastoral notes
+
+---
+Ticket: PFT-2986
+Issue id: 181311
+Module: Timetable
+Summary: Seating Plans - drag and drop
+Role: Classroom Teacher
+Source: June 2025 - Row 1672
+Comment: Updating seating plans is a more laborious task on arbor than previous classroom management software (classcharts). The biggest quality of life improvement would be to allow students to be dragged and dropped into new seats (including swaps with current occupant of seat), rather than manually selecting by clicking on seats. This would genuinely save huge amounts of time when making seating plans.
+
+---
+Ticket: PFT-2985
+Issue id: 181307
+Module: Payments
+Summary: Partial refunds
+Role: Emily Marshall
+Source: June 2025 - Row 1673
+Comment: Our after school clubs are set up one half term at a time and not individual sessions. This means that we are unable to do a partial refund if one session gets cancelled. We would like the option to do partial refunds to save us having to do cash refunds when one session is cancelled. For example, we have 1 session at £4 per child to cancel, and we promote being a cashless school, but now we must refund £4 to 12 children in cash!
+
+---
+Ticket: PFT-2984
+Issue id: 181300
+Module: Cover
+Summary: Remove specific staff from an All teaching/non teaching participant Category.
+Role: Admin Assistant.
+Source: June 2025 - Row 1674
+Comment: It would be very helpful if you could expand the All teaching/Non teaching participant category for an event, so you could remove certain staff members.
+
+For example, I need to create 2 meetings for the same day at the same time.
+One for head of faculty's and one for the rest of the teaching staff.
+
+The head of Faculty meeting is easy, as there aren't that many participants, but I now have to add manually all the other teaching staff for the second meeting and it would be easier to just create another meeting for All teaching staff but then remove the few members of staff.
+
+---
+Ticket: PFT-2983
+Issue id: 181299
+Module: Behaviour
+Summary: Currently, being able to delete detentions in bulk as you'd like isn’t possible in Arbor.
+Role: Cover Manager
+Source: June 2025 - Row 1675
+Comment: Arbor should amalgamate detentions and delete once amalgamated, Looking for the best way to save time when deleting detentions. Currently, being able to delete detentions in bulk as you'd like isn’t possible in Arbor. detentions are assigned via the workflow all previously assigned detentions still remain. For example a detention is assigned per incident in this case, then when 3 incidents are logged - an escalation occurs and an after school detention is assigned also.
+The only way to delete these is to click on the students individually and then click Cancel Detention, which can take some time to action.
+
+---
+Ticket: PFT-2982
+Issue id: 181290
+Module: Payments
+Summary: School Shop - More Features needed
+Role: School Administrator
+Source: June 2025 - Row 1676
+Comment: Ability to be able to email from the school shop section.
+
+---
+Ticket: PFT-2981
+Issue id: 181285
+Module: SEN/SEND
+Summary: Top-Up Funding
+Role: Data Manager
+Source: June 2025 - Row 1677
+Comment: I have recently submitted proposal to improve Top-Up funding with sub-categories: EHCP and Element 3 (obviously, there should be different algorithms for them and how it correlates with SEN Needs chosen option.
+
+Apparently, it's a pain point other clients would like to see resolved:
+
+QUOTE
+Tim Mockford
+💡
+15m
+
+Teacher, timetabler and data manager
+Hi Ema, funding is a constant headache for us. Currently we are using a UDF feeding in custom groups and courses to track it however it’s a bit thrown together a tidier solution would be better. Pupils can be in receipt of different bands of EHCP funding (and the naming differs between LAs). Plus non-EHCP pupils can also be in receipt of bespoke LA funding. Happy to discuss further.
+UNQUOTE
+
+---
+Ticket: PFT-2980
+Issue id: 181276
+Module: Core Student Record
+Summary: Emergency contacts
+Role: Attenance Coordinator
+Source: June 2025 - Row 1678
+Comment: It would be helpful to know if the student lives with both or one parent in the emergency contact  box , may be a house symbol to identify or
+Telephone
+Emergency contact
+lives with this person yes/no
+
+this would make it easier when contacting home for any families who have restrictions in place.
+
+---
+Ticket: PFT-2979
+Issue id: 181273
+Module: Medical
+Summary: Medication expiry date report
+Role: MIS officer
+Source: June 2025 - Row 1679
+Comment: We hold medication in school for pupils and would like an easy way to log the type of medication and expiry date so a report can be run.  Parents could then be sent reminders/notification/instruction.
+
+At present the information is held either under medical condition or medical note.
+
+This would be a huge admin timesaver.
+
+Debbie
+
+---
+Ticket: PFT-2978
+Issue id: 181272
+Module: Groups & Enrolments
+Summary: clubs
+Role: Data Manager
+Source: June 2025 - Row 1680
+Comment: An option to clone chosen club(s) would be so much easier and time-saving.
+
+---
+Ticket: PFT-2977
+Issue id: 181271
+Module: Safeguarding
+Summary: Improved Emergency Alert Notifications
+Role: Executive Principal
+Source: June 2025 - Row 1681
+Comment: Currently the staff assigned to the on call timetable receive notifications.
+
+It would be even better if notifications could be customised to additional staff based on certain criteria - such as Head of Year 9 receiving alerts for any pupils in Year 9 regardless of the period of the day.
+
+---
+Ticket: PFT-2976
+Issue id: 181270
+Module: SEN/SEND
+Summary: Top-Up Funding
+Role: Data Manager
+Source: June 2025 - Row 1682
+Comment: At present, the Top-Up funding field in Arbor may refer to either EHCP or Element 3 funding. I would like to enquire whether there is currently a way to distinguish between the two, to ensure clarity regarding the specific type of funding each student is in receipt of.
+
+Use Case
+
+During the most recent School Census, I encountered an issue involving a student recorded as receiving ‘SEN Support’ who also had Top-Up funding—specifically, Element 3. This resulted in an error in the Summer Census return, as Arbor’s validation flagged a discrepancy; the system appears to expect the SEN status to be marked as ‘EHCP’ when Top-Up funding is present. Following clarification from the Local Authority, I was able to confirm the arrangement was valid and successfully submitted the return.
+
+To help mitigate similar issues in future, it would be helpful if Arbor provided a drop-down menu or similar mechanism to specify the type of Top-Up funding (i.e., EHCP or Element 3). Alternatively, is there an existing functionality within the platform that would allow this level of detail to be recorded?
+
+---
+Ticket: PFT-2975
+Issue id: 181269
+Module: Groups & Enrolments
+Summary: Contact status when contacts added by parents
+Role: MIS Manager
+Source: June 2025 - Row 1683
+Comment: The ability for parents to add the details of other contacts is a very welcome feature which saves a lot of time when enrolling new cohorts.  However, there needs to be a feature at the point of approving these additions that allows school staff to set primary/legal status without having to then go to individual profiles as this is a very time consuming extra step when considering e.g. a new 200+ Y7 cohort
+
+---
+Ticket: PFT-2974
+Issue id: 181267
+Module: Communications
+Summary: Cancelling Trip Participation
+Role: Receptionist/Administration Assistant
+Source: June 2025 - Row 1684
+Comment: It would be really helpful if we could add a note when we cancel trip participation, so we have a reference when looking back at it.
+
+---
+Ticket: PFT-2973
+Issue id: 181266
+Module: Data & Reporting
+Summary: Change the default search criteria for students and staff
+Role: DSBM
+Source: June 2025 - Row 1685
+Comment: When browsing students and staff the default is for All current and future staff or students - it would be useful that the individual can set their own default search criteria. Hope this makes sense.
+
+---
+Ticket: PFT-2972
+Issue id: 181265
+Module: Staff/HR
+Summary: Staff Profiles
+Role: Office Manger
+Source: June 2025 - Row 1686
+Comment: When downloading our staff profiles it does not include the next of kin contact details, which we would find essential for staff to check their details.
+
+We would also find it far more efficient if we could print multiple form rather than have to go into each profile and print them individually which is very time consuming
+
+---
+Ticket: PFT-2971
+Issue id: 181264
+Module: SEN/SEND
+Summary: MAT-Level Interventions: Alternative Provision
+Role: Director of In-School AP
+Source: June 2025 - Row 1687
+Comment: As a trust Director, I'd love to be able to prescribe that a user defined field (in our case AP start date) could act as a participant criteria to add students into this intervention and standardise this across the trust. Our staff are being told that the AP start date must be entered to allow us to do central tracking and the Interventions architecture is perfectly set up for us to look at outcomes (e.g. attendance, suspensions, SEMH progress) but needs to have availability for us to use our UDFs to do this.
+
+---
+Ticket: PFT-2970
+Issue id: 181263
+Module: Payments
+Summary: Shop Products
+Role: School Secretary PA
+Source: June 2025 - Row 1688
+Comment: Need for parents to be able to buy a shop item at the school office and pay by cash.  Have a few parents who only pay for everything with cash due to overdrafts.
+Whilst I'm on and talking about shop products would like you to look into the ability for the stock to be depleted as and when an item is bought so that you have a true reflection of how much stock you have for re-ordering purposes without having to go to the boxes and manually count them.
+
+---
+Ticket: PFT-2969
+Issue id: 181261
+Module: Timetable
+Summary: Room changes
+Role: Office Manager
+Source: June 2025 - Row 1689
+Comment: When we do room changes on Arbor, is there anyway of the staff members being notified of there changes without checking their timetable calendar or us sending the room changes notices out via email, just thinking if the notification could be automated and cut down on time for ourselves.  As staff do not check their calendars as they general know which room their classes are in and do not automatically see the room changes unless we send through on email to them a room change notifications.
+
+regards
+Tracey
+
+---
+Ticket: PFT-2968
+Issue id: 181260
+Module: Assessments
+Summary: Optional completion of some assessments
+Role: School Data Manager
+Source: June 2025 - Row 1690
+Comment: In assessments there needs to be a way for an Assessment to be optional to complete so it can show data is 100% complete when staff have completed all the data they need to. We have an optional Assessment 'AtL Comment'. Staff only complete this is students have a score of 3 or a 4 in the AtL assessment. Therefore it is required in some cases but not all.
+Can we have it set to use it but just not to be an expectation to complete (ie it is optional). Therefore if someone has completed all their other data it would show 100% complete?
+Thanks
+
+---
+Ticket: PFT-2967
+Issue id: 181254
+Module: Data & Reporting
+Summary: AI Suggestion: Add "all students" to Demographics
+Role: Trust Data Manager
+Source: June 2025 - Row 1691
+Comment: Please can you add "all students" to demographics in filtering, to allow comparison of data.
+
+I know you are only focussing on AI improvements at the moment, so I have labelled suggestion accordingly.  It doesn't actually need AI. :)
+
+---
+Ticket: PFT-2966
+Issue id: 181253
+Module: Timetable
+Summary: Student Timetables: gaps and/or clashing lessons
+Role: Data Manager
+Source: June 2025 - Row 1692
+Comment: Hi, with the current Arbor features, I'm struggling to find a needle in a hay stack when it comes to student timetable clashes and/or gaps. For example, when I go to School > Timetable > School Timetable > Clashes, the report won't give me an option to include year groups, I'm just getting all students with gaps in their calendars and rather than the report focusing on 'how many students are affected by the timetable gaps and IN WHICH YEAR GROUP' , it just provides me with a lot of noise (= events, thousands of them!). It's absolutely not efficient!. I've tried to recreate this report (and the one with student timetable clashes) using CRW, but due to limitations of what fields I'm able to choose in CRW, it's not coming together. Also, I don't seem to have an option to schedule such reports to the school's leadership. As student timetable gaps are a safeguarding issue, could you please optimize the reporting of this?
+
+---
+Ticket: PFT-2965
+Issue id: 181252
+Module: Communications
+Summary: Potential GDPR issue
+Role: School Business Manager
+Source: June 2025 - Row 1693
+Comment: When trying to send an email to a parent of an applicant, we click on Communications/Notes on the child's profile, then send email to Guardians/Student - this results in the parents email addresses being automatically inserted into the "To" box not the "BCC" box (how the system is set up for all students currently on our roll). We cannot select the parents as recipients in the "BCC" box.
+
+This needs to be addressing as a priority as there are families where families live in split homes and parent relationships have broken down and it is important that parents cannot see the email addresses of their partners - this may be at the request of the parent or by the courts. By this function not working correctly in the Arbor for applicants, email addresses of each parent will be visible to the other.
+
+Please acknowlegde receipt of this request and update us on progress of correction as soon as a matter of priroity.
+
+We do not want to be caught up on a GDPR breach due to this issue.
+
+---
+Ticket: PFT-2964
+Issue id: 181251
+Module: Groups & Enrolments
+Summary: Umbrella method for setting up clubs
+Role: Data Manager
+Source: June 2025 - Row 1694
+Comment: I wanted to enquire whether anyone has found an effective way to structure clubs within School > Activities > Clubs using an umbrella approach—similar to the way courses are set up, where each course encompasses multiple forms.
+
+At present, I’m finding it challenging to create a clear ‘parent’ club structure. This results in an overwhelming number of individual clubs, which skews reporting and analysis. For instance, it becomes difficult to determine which clubs are most popular among specific groups such as gender, year groups, or other demographic segments, as some clubs are run on a weekly / termly basis.
+
+Any guidance or suggestions would be greatly appreciated.
+
+---
+Ticket: PFT-2963
+Issue id: 181250
+Module: Attendance
+Summary: Ad Hoc Intervention
+Role: attendance admin
+Source: June 2025 - Row 1695
+Comment: I frequently made "Ad hoc interventions" for teachers but very often the student list changes in the run-up to, or on the day of, the intervention.
+I have spoken to the helpdesk who have confirmed it is not possible to delete or add students. This would be a very well-used tool for me if it was available.
+Currently if teachers request addtions, I either have to delete the originial ad-hoc intervention and make a new one with the up-to-date student list, but this is time consuming if there is a long list of students or i make a separate ad-hoc intervention for the teacher but this then means they have multiple registers to take for 1 intervention.
+
+---
+Ticket: PFT-2962
+Issue id: 181249
+Module: Attendance
+Summary: Attendance Dasbhboard and Y11 Summer Term
+Role: Data Manager
+Source: June 2025 - Row 1696
+Comment: The DfE does not count Yr11 Attendance during the 2nd Summer Half term. It would be great if Arbor's attendance dashboard could also not count Yr11 during this timeframe and set their possible attendances to 0 for the half term where the dashboards stats are concerned.
+
+---
+Ticket: PFT-2961
+Issue id: 181245
+Module: Behaviour
+Summary: More Flag options
+Role: Assistant Head Teacher
+Source: June 2025 - Row 1697
+Comment: Hi,
+
+We really need their to be an opportunity to add different coloured flags against students. Currently we can only add red.
+
+When search the internet it suggested the below. Can this be done please?
+
+Step 1: Create a User Defined Field (UDF)
+Navigate to:
+System > User Defined Fields
+
+Select Add User Defined Field.
+
+Complete the configuration:
+
+Related to: Select Students
+
+Field Type: Select Drop-down
+
+Field Name/Identifier: Enter Focus Five
+
+Options:
+
+Yes
+
+(Optional: Add No or leave blank as default)
+
+Under Permissions, ensure that appropriate staff (e.g. designated SLT or Data Team) can access and edit the UDF.
+
+Click Save to finalise the field.
+
+This step establishes the backend field required to drive the visual flag.
+
+Step 2: Create a Linked Visual Flag
+Still in the System area, locate either:
+
+School Settings > Student Flags
+
+or System > Configuration > Flags (depending on your Arbor version)
+
+Click New Flag.
+
+Complete the flag setup:
+
+Name: Focus Five Flag
+
+Description: e.g. Used to identify students in termly Focus Five cohorts
+
+Type: Select User Defined Field
+
+Linked UDF Field: Choose the Focus Five drop-down created in Step 1
+
+Display Icon/Colour: Choose a distinct colour and icon that does not conflict with existing flags (e.g. green circle)
+
+Tooltip (optional): Focus Five student – termly support initiative
+
+Active: Ensure this option is ticked
+
+Click Create to finalise the visual flag.
+
+This step ensures the system will display a coloured flag automatically when a student’s UDF is set to “Yes.”
+
+Step 3: Apply the Flag to Students
+Option A: Individual Student Assignment
+Navigate to the relevant student profile.
+
+Scroll to the Custom Fields or User Defined Fields section.
+
+Set the Focus Five field to Yes.
+
+Save the change.
+
+Confirm that the Focus Five flag now appears in the student profile header.
+
+Option B: Bulk Assignment
+Navigate to:
+System > User Defined Fields
+
+Select the Focus Five field from the list.
+
+Use the Bulk Actions > Edit Values tool.
+
+Select the students to be included in the Focus Five cohort.
+
+Set their field value to Yes and apply changes.
+
+This method is recommended for termly updates.
+
+Step 4: Confirm Flag Visibility
+To verify the flag is functioning correctly:
+
+Open a register for a class containing a Focus Five student. The coloured flag should appear next to their name.
+
+In My Classroom, open a seating plan. The flag should appear in the student badge area.
+
+Within a student profile, the flag will be visible in the header section once the UDF is set to “Yes.”
+
+If flags are not immediately visible, a system refresh or overnight sync may be required.
+
+We do no have this option on Arbor currently.
+
+---
+Ticket: PFT-2960
+Issue id: 181240
+Module: Groups & Enrolments
+Summary: Clubs Issue
+Role: School Business Manager
+Source: June 2025 - Row 1698
+Comment: Hiya,
+
+We have recently moved across to Arbor from Scholarpack. We used Schoolcomms for our clubs bookings. A number of parents have given feedback that they are struggling when making bookings for WACC. They have asked if there is a way of being able to see which 'days' they have booked alongside the dates as they are having to go to and from calendars to book sessions.
+
+For example it currently shows bookings as:
+
+9th June, 10th June etc.
+
+Parents would prefer it as
+
+Monday 9th June, Tuesday 10th June etc.
+
+Is this possible?
+
+---
+Ticket: PFT-2959
+Issue id: 181239
+Module: Timetable
+Summary: Room Bookings
+Role: IT Manager
+Source: June 2025 - Row 1699
+Comment: We currently have a Edulink, on that we have a room booking system that we use for mainly the booking of ICT suites.
+
+Would be really useful to have that. On Edulink you set which rooms are available to book and staff then can click to book.
+
+---
+Ticket: PFT-2958
+Issue id: 181236
+Module: Groups & Enrolments
+Summary: Transferring students between courses
+Role: Data Manager
+Source: June 2025 - Row 1700
+Comment: When transferring a student from one course to another within their enrolment area. it would be very helpful if, when selecting a new course, the number of students enrolled in the class would show, like it does if you `Add` Course from the same area. A small thing that would help save time a lot of time.
+
+---
+Ticket: PFT-2957
+Issue id: 181235
+Module: Parent Portal/App
+Summary: Split Parent Portal settings into separate permissions group
+Role: Network Manager
+Source: June 2025 - Row 1701
+Comment: Currently the parental portal settings and usage report are under the very wide reaching "School: General Admin: Administer" permission. It would be nice to have a separate permission set for the parent portal to ensure people don't have more permissions than they need.
+
+---
+Ticket: PFT-2956
+Issue id: 181227
+Module: Data & Reporting
+Summary: Ability to remove blank rows in standard report writer
+Role: Data Manager
+Source: June 2025 - Row 1702
+Comment: Please could the ability to not show blank rows be added to the standard report writer. We have students who do a double BTEC course who share a class with students taking the single course so when their report gets produced, they have a line for the single course and the double course despite the single course row having no data in it. We would like the option to click a button to not show a row if it has no data in. Thanks.
+
+---
