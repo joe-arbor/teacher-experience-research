@@ -22,10 +22,8 @@ export function FeedbackTiles({
   return (
     <div
       style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-        gap: 16,
-        alignItems: "start",
+        columnCount: 3,
+        columnGap: 16,
       }}
     >
       {data.map((row) => {
@@ -75,6 +73,8 @@ function Tile({
     <div
       style={{
         position: "relative",
+        breakInside: "avoid",
+        marginBottom: 16,
         border: "1px solid #d0d7de",
         borderRadius: 8,
         background: "#ffffff",

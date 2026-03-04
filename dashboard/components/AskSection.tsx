@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FormFieldInput } from "./FormField";
 
 export function AskSection({
   onAsk,
@@ -20,13 +21,13 @@ export function AskSection({
       <h3 style={{ margin: "0 0 8px" }}>Ask about this data</h3>
       <p style={{ margin: "0 0 12px", fontSize: 12, color: "#57606a" }}>Context: {contextLabel}</p>
       <div style={{ display: "flex", gap: 8 }}>
-        <input
+        <FormFieldInput
           type="text"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           placeholder="e.g. What are the main themes in Behaviour feedback?"
           disabled={loading}
-          style={{ flex: 1, padding: "8px 12px", border: "1px solid #d0d7de", borderRadius: 6, fontSize: 14 }}
+          style={{ flex: 1 }}
         />
         <button
           type="button"

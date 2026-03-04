@@ -10,11 +10,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
+        height: "100%",
         background: "#eaeef2",
       }}
     >
       <TopBar />
-      <div style={{ display: "flex", flex: 1, minHeight: 0 }}>
+      <div style={{ display: "flex", flex: 1, minHeight: 0, overflow: "hidden" }}>
         <Sidebar />
         <main
           style={{
@@ -22,6 +23,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             minWidth: 0,
             overflow: "auto",
             position: "relative",
+            minHeight: 0,
           }}
         >
           {children}

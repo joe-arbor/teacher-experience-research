@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { ChevronDown, LayoutDashboard } from "lucide-react";
 
 const TOP_BAR_HEIGHT = 56;
 const APP_NAME = "Teacher Experience";
@@ -53,11 +54,10 @@ export function TopBar() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: 16,
           }}
           aria-hidden
         >
-          ◫
+          <LayoutDashboard size={18} color="#e6edf3" />
         </div>
         <span style={{ fontWeight: 600, fontSize: 15 }}>{APP_NAME}</span>
         <div ref={dropdownRef} style={{ position: "relative" }}>
@@ -78,7 +78,7 @@ export function TopBar() {
             }}
           >
             Teacher Experience PDS
-            <span style={{ opacity: 0.8 }}>▼</span>
+            <ChevronDown size={16} style={{ opacity: 0.8 }} />
           </button>
           {projectOpen && (
             <div

@@ -1,10 +1,54 @@
 * {
   box-sizing: border-box;
 }
+
+/* Core form field: white background, light grey border, hover state */
+input.form-field,
+select.form-field,
+textarea.form-field {
+  background: #ffffff !important;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  transition: border-color 0.15s ease;
+}
+input.form-field:hover,
+select.form-field:hover,
+textarea.form-field:hover {
+  border-color: #8c959f;
+}
+input.form-field:focus,
+select.form-field:focus,
+textarea.form-field:focus {
+  outline: none;
+  border-color: #0969da;
+  box-shadow: 0 0 0 2px rgba(9, 105, 218, 0.2);
+}
+input.form-field:disabled,
+select.form-field:disabled,
+textarea.form-field:disabled {
+  background: #f6f8fa !important;
+  cursor: not-allowed;
+}
+
+/* BaseUI Select control - same look */
+.form-field-select-control {
+  background: #ffffff !important;
+  border: 1px solid #d0d7de !important;
+  border-radius: 6px;
+  transition: border-color 0.15s ease;
+}
+.form-field-select-control:hover {
+  border-color: #8c959f !important;
+}
+.form-field-select-control:focus-within {
+  border-color: #0969da !important;
+  box-shadow: 0 0 0 2px rgba(9, 105, 218, 0.2);
+}
 html,
 body {
   margin: 0;
   min-height: 100%;
+  height: 100%;
 }
 
 .sidebar-nav-link:hover {

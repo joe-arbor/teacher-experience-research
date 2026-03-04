@@ -1,19 +1,36 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { LucideIcon } from "lucide-react";
+import {
+  Home,
+  History,
+  GraduationCap,
+  BarChart3,
+  MessageSquareQuote,
+  Target,
+  Star,
+  Newspaper,
+  ChevronDown,
+  ChevronRight,
+  FileText,
+} from "lucide-react";
 
 const SIDEBAR_WIDTH = 260;
 
-const NAV_ITEMS: { href: string; label: string; icon: string; count?: number }[] = [
-  { href: "/", label: "Overview", icon: "▣" },
-  { href: "/dashboard", label: "Jira Feedback Dashboard", icon: "📊", count: 1 },
-  { href: "/categories", label: "Category quotes", icon: "💬", count: 1 },
-  { href: "#", label: "Research", icon: "▥", count: 1 },
-  { href: "#", label: "Design Prototypes", icon: "▦" },
-  { href: "#", label: "Competitive Analysis", icon: "▧" },
-  { href: "#", label: "Intermission", icon: "▨", count: 2 },
-  { href: "#", label: "Activation Strategy", icon: "▩", count: 1 },
+const ICON_SIZE = 18;
+
+const PRODUCT_FEEDBACK_ITEMS: { href: string; label: string; Icon: LucideIcon }[] = [
+  { href: "/dashboard", label: "Jira Feedback Dashboard", Icon: BarChart3 },
+  { href: "/categories", label: "Category quotes", Icon: MessageSquareQuote },
+  { href: "/problems", label: "Product problems", Icon: Target },
+];
+
+const TEACHER_NPS_2025_ITEMS: { href: string; label: string; Icon: LucideIcon }[] = [
+  { href: "/nps", label: "NPS Feedback Categories", Icon: Star },
+  { href: "/nps/headlines", label: "NPS Headlines", Icon: Newspaper },
 ];
 
 const DOC_ITEMS = [
@@ -24,6 +41,19 @@ const DOC_ITEMS = [
 export function Sidebar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isChangelog = pathname === "/changelog";
+  const isProductFeedbackActive = PRODUCT_FEEDBACK_ITEMS.some((item) => pathname === item.href);
+  const isTeacherNpsActive = TEACHER_NPS_2025_ITEMS.some((item) => pathname === item.href);
+  const [productFeedbackOpen, setProductFeedbackOpen] = useState(isProductFeedbackActive);
+  const [teacherNpsOpen, setTeacherNpsOpen] = useState(isTeacherNpsActive);
+
+  useEffect(() => {
+    if (isProductFeedbackActive) setProductFeedbackOpen(true);
+  }, [isProductFeedbackActive]);
+
+  useEffect(() => {
+    if (isTeacherNpsActive) setTeacherNpsOpen(true);
+  }, [isTeacherNpsActive]);
 
   return (
     <aside
@@ -39,36 +69,182 @@ export function Sidebar() {
       }}
     >
       <nav style={{ padding: "12px 8px", flex: "0 0 auto" }}>
-        {NAV_ITEMS.map((item) => {
-          const active = item.href === "/" ? isHome : pathname === item.href;
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="sidebar-nav-link"
-              data-active={active}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 10,
-                padding: "8px 12px",
-                borderRadius: 6,
-                marginBottom: 2,
-                textDecoration: "none",
-                color: active ? "#24292f" : "#57606a",
-                background: active ? "#eaeef2" : "transparent",
-                fontWeight: active ? 600 : 400,
-                fontSize: 14,
-              }}
-            >
-              <span style={{ fontSize: 16, width: 20, textAlign: "center" }}>{item.icon}</span>
-              <span style={{ flex: 1 }}>{item.label}</span>
-              {item.count != null && (
-                <span style={{ fontSize: 11, color: "#57606a", fontWeight: 500 }}>{item.count}</span>
+        <Link
+          href="/"
+          className="sidebar-nav-link"
+          data-active={isHome}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            padding: "8px 12px",
+            borderRadius: 6,
+            marginBottom: 2,
+            textDecoration: "none",
+            color: isHome ? "#24292f" : "#57606a",
+            background: isHome ? "#eaeef2" : "transparent",
+            fontWeight: isHome ? 600 : 400,
+            fontSize: 14,
+          }}
+        >
+          <span style={{ display: "flex", alignItems: "center", width: 20 }}>
+            <Home size={ICON_SIZE} />
+          </span>
+          <span style={{ flex: 1 }}>Overview</span>
+        </Link>
+        <Link
+          href="/changelog"
+          className="sidebar-nav-link"
+          data-active={isChangelog}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            padding: "8px 12px",
+            borderRadius: 6,
+            marginBottom: 2,
+            textDecoration: "none",
+            color: isChangelog ? "#24292f" : "#57606a",
+            background: isChangelog ? "#eaeef2" : "transparent",
+            fontWeight: isChangelog ? 600 : 400,
+            fontSize: 14,
+          }}
+        >
+          <span style={{ display: "flex", alignItems: "center", width: 20 }}>
+            <History size={ICON_SIZE} />
+          </span>
+          <span style={{ flex: 1 }}>Changelog</span>
+        </Link>
+
+        <div style={{ marginBottom: 2 }}>
+          <button
+            type="button"
+            onClick={() => setProductFeedbackOpen((open) => !open)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              width: "100%",
+              padding: "8px 12px",
+              borderRadius: 6,
+              border: "none",
+              background: isProductFeedbackActive ? "#eaeef2" : "transparent",
+              color: isProductFeedbackActive ? "#24292f" : "#57606a",
+              fontWeight: isProductFeedbackActive ? 600 : 400,
+              fontSize: 14,
+              cursor: "pointer",
+              textAlign: "left",
+            }}
+          >
+            <span style={{ display: "flex", alignItems: "center", width: 20 }}>
+              {productFeedbackOpen ? (
+                <ChevronDown size={ICON_SIZE} />
+              ) : (
+                <ChevronRight size={ICON_SIZE} />
               )}
-            </Link>
-          );
-        })}
+            </span>
+            <span style={{ display: "flex", alignItems: "center", gap: 8, flex: 1 }}>
+              <GraduationCap size={ICON_SIZE} />
+              Product Feedback
+            </span>
+          </button>
+          {productFeedbackOpen &&
+            PRODUCT_FEEDBACK_ITEMS.map((item) => {
+              const active = pathname === item.href;
+              const Icon = item.Icon;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="sidebar-nav-link"
+                  data-active={active}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 10,
+                    padding: "8px 12px 8px 38px",
+                    borderRadius: 6,
+                    marginBottom: 2,
+                    textDecoration: "none",
+                    color: active ? "#24292f" : "#57606a",
+                    background: active ? "#eaeef2" : "transparent",
+                    fontWeight: active ? 600 : 400,
+                    fontSize: 14,
+                  }}
+                >
+                  <span style={{ display: "flex", alignItems: "center", width: 20 }}>
+                    <Icon size={ICON_SIZE} />
+                  </span>
+                  <span style={{ flex: 1 }}>{item.label}</span>
+                </Link>
+              );
+            })}
+        </div>
+
+        <div style={{ marginBottom: 2 }}>
+          <button
+            type="button"
+            onClick={() => setTeacherNpsOpen((open) => !open)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              width: "100%",
+              padding: "8px 12px",
+              borderRadius: 6,
+              border: "none",
+              background: isTeacherNpsActive ? "#eaeef2" : "transparent",
+              color: isTeacherNpsActive ? "#24292f" : "#57606a",
+              fontWeight: isTeacherNpsActive ? 600 : 400,
+              fontSize: 14,
+              cursor: "pointer",
+              textAlign: "left",
+            }}
+          >
+            <span style={{ display: "flex", alignItems: "center", width: 20 }}>
+              {teacherNpsOpen ? (
+                <ChevronDown size={ICON_SIZE} />
+              ) : (
+                <ChevronRight size={ICON_SIZE} />
+              )}
+            </span>
+            <span style={{ display: "flex", alignItems: "center", gap: 8, flex: 1 }}>
+              <Star size={ICON_SIZE} />
+              Teacher NPS 2025
+            </span>
+          </button>
+          {teacherNpsOpen &&
+            TEACHER_NPS_2025_ITEMS.map((item) => {
+              const active = pathname === item.href;
+              const Icon = item.Icon;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="sidebar-nav-link"
+                  data-active={active}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 10,
+                    padding: "8px 12px 8px 38px",
+                    borderRadius: 6,
+                    marginBottom: 2,
+                    textDecoration: "none",
+                    color: active ? "#24292f" : "#57606a",
+                    background: active ? "#eaeef2" : "transparent",
+                    fontWeight: active ? 600 : 400,
+                    fontSize: 14,
+                  }}
+                >
+                  <span style={{ display: "flex", alignItems: "center", width: 20 }}>
+                    <Icon size={ICON_SIZE} />
+                  </span>
+                  <span style={{ flex: 1 }}>{item.label}</span>
+                </Link>
+              );
+            })}
+        </div>
       </nav>
       <div style={{ height: 1, background: "#d0d7de", margin: "4px 0" }} />
       <div style={{ padding: "8px 12px 16px", flex: "1 1 auto", minHeight: 0 }}>
@@ -91,7 +267,9 @@ export function Sidebar() {
                 fontSize: 13,
               }}
             >
-              <span style={{ fontSize: 14 }}>📄</span>
+              <span style={{ display: "flex", alignItems: "center" }}>
+                <FileText size={16} />
+              </span>
               {doc.name}
             </Link>
           ))}

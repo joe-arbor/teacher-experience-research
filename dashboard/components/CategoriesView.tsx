@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useThemeReady } from "@/app/providers";
 import { Heading, HeadingLevel } from "baseui/heading";
 import { Select } from "baseui/select";
+import { SELECT_FORM_FIELD_OVERRIDES } from "@/components/FormField";
 import { SummaryCards } from "@/components/SummaryCards";
 import { SubCategoryChart } from "@/components/PhaseJourneyCharts";
 import { FeedbackTiles } from "@/components/FeedbackTiles";
@@ -26,6 +29,8 @@ function filterData(
 }
 
 export default function CategoriesView() {
+  const themeReady = useThemeReady();
+  const searchParams = useSearchParams();
   const [data, setData] = useState<FeedbackRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState<string | null>(null);
@@ -35,10 +40,18 @@ export default function CategoriesView() {
   const [askAnswer, setAskAnswer] = useState<string | null>(null);
 
   useEffect(() => {
+    if (!searchParams) return;
+    const cat = searchParams.get("category");
+    const sub = searchParams.get("sub");
+    if (cat) setCategory(cat);
+    if (sub) setSubCategory(sub);
+  }, [searchParams]);
+
+  useEffect(() => {
     fetch("/teacher_experience_data.json")
       .then((res) => res.json())
-      .then((json: FeedbackRow[]) => setData(json))
-      .catch(() => {})
+      .then((json: unknown) => setData(Array.isArray(json) ? json : []))
+      .catch(() => setData([]))
       .finally(() => setLoading(false));
   }, []);
 
@@ -89,10 +102,16 @@ export default function CategoriesView() {
     return parts.length ? parts.join(" → ") : "All teacher experience feedback";
   }, [category, subCategory]);
 
-  if (loading) {
+  const showingCategoriesLabel = useMemo(() => {
+    if (!category && !subCategory) return "All";
+    if (category && subCategory) return `${category} › ${subCategory}`;
+    return (category || subCategory) ?? "All";
+  }, [category, subCategory]);
+
+  if (!themeReady || loading) {
     return (
       <div style={{ padding: 48, textAlign: "center" }}>
-        Loading teacher experience data…
+        {!themeReady ? "Loading…" : "Loading teacher experience data…"}
       </div>
     );
   }
@@ -110,6 +129,7 @@ export default function CategoriesView() {
         <div style={{ minWidth: 200 }}>
           <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#24292f", marginBottom: 4 }}>Category</label>
           <Select
+            overrides={SELECT_FORM_FIELD_OVERRIDES}
             options={[{ id: "__all__", label: "All categories" }, ...CATEGORIES.map((c) => ({ id: c, label: c }))]}
             value={category ? [{ id: category, label: category }] : [{ id: "__all__", label: "All categories" }]}
             onChange={({ value }) => {
@@ -125,6 +145,7 @@ export default function CategoriesView() {
         <div style={{ minWidth: 220 }}>
           <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#24292f", marginBottom: 4 }}>Sub-category</label>
           <Select
+            overrides={SELECT_FORM_FIELD_OVERRIDES}
             options={[{ id: "__all__", label: "All sub-categories" }, ...subCategoriesForCategory.map((s) => ({ id: s, label: s }))]}
             value={subCategory ? [{ id: subCategory, label: subCategory }] : [{ id: "__all__", label: "All sub-categories" }]}
             onChange={({ value }) => {
@@ -152,7 +173,7 @@ export default function CategoriesView() {
       </div>
 
       <div style={{ marginBottom: 16 }}>
-        <h3 style={{ marginBottom: 8 }}>Comments by sub-category</h3>
+        <h3 style={{ marginBottom: 8 }}>Showing categories: {showingCategoriesLabel}</h3>
         <FeedbackTiles
           key={`${category ?? "all"}-${subCategory ?? "all"}`}
           data={filtered}
