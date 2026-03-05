@@ -19,6 +19,7 @@ import {
   Lightbulb,
   CheckSquare,
   AlertCircle,
+  Calendar,
 } from "lucide-react";
 
 const SIDEBAR_WIDTH = 260;
@@ -46,13 +47,15 @@ export function Sidebar() {
   const isHome = pathname === "/";
   const isChangelog = pathname === "/changelog";
   const isDesignHmw = pathname === "/design-hmw";
+  const isNpsHmw = pathname === "/nps-hmw";
+  const isDesignSprint = pathname === "/design-sprint";
   const isAcAiDraft = pathname === "/ac-ai-draft";
   const isProblemStatements = pathname === "/problem-statements";
   const isProductFeedbackActive = PRODUCT_FEEDBACK_ITEMS.some((item) => pathname === item.href);
   const isTeacherNpsActive = TEACHER_NPS_2025_ITEMS.some((item) => pathname === item.href);
   const [productFeedbackOpen, setProductFeedbackOpen] = useState(isProductFeedbackActive);
   const [teacherNpsOpen, setTeacherNpsOpen] = useState(isTeacherNpsActive);
-  const isAiSuggestedActive = isDesignHmw || isAcAiDraft || isProblemStatements;
+  const isAiSuggestedActive = isDesignHmw || isNpsHmw || isAcAiDraft || isProblemStatements;
   const [aiSuggestedOpen, setAiSuggestedOpen] = useState(isAiSuggestedActive);
 
   useEffect(() => {
@@ -311,9 +314,9 @@ export function Sidebar() {
                 <span style={{ flex: 1 }}>Design HMW</span>
               </Link>
               <Link
-                href="/ac-ai-draft"
+                href="/nps-hmw"
                 className="sidebar-nav-link"
-                data-active={isAcAiDraft}
+                data-active={isNpsHmw}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -322,16 +325,16 @@ export function Sidebar() {
                   borderRadius: 6,
                   marginBottom: 2,
                   textDecoration: "none",
-                  color: isAcAiDraft ? "#24292f" : "#57606a",
-                  background: isAcAiDraft ? "#eaeef2" : "transparent",
-                  fontWeight: isAcAiDraft ? 600 : 400,
+                  color: isNpsHmw ? "#24292f" : "#57606a",
+                  background: isNpsHmw ? "#eaeef2" : "transparent",
+                  fontWeight: isNpsHmw ? 600 : 400,
                   fontSize: 14,
                 }}
               >
                 <span style={{ display: "flex", alignItems: "center", width: 20 }}>
-                  <CheckSquare size={ICON_SIZE} />
+                  <Star size={ICON_SIZE} />
                 </span>
-                <span style={{ flex: 1 }}>AC AI Draft</span>
+                <span style={{ flex: 1 }}>NPS HMW</span>
               </Link>
               <Link
                 href="/problem-statements"
@@ -356,9 +359,55 @@ export function Sidebar() {
                 </span>
                 <span style={{ flex: 1 }}>Problem Statements</span>
               </Link>
+              <Link
+                href="/ac-ai-draft"
+                className="sidebar-nav-link"
+                data-active={isAcAiDraft}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  padding: "8px 12px 8px 38px",
+                  borderRadius: 6,
+                  marginBottom: 2,
+                  textDecoration: "none",
+                  color: isAcAiDraft ? "#24292f" : "#57606a",
+                  background: isAcAiDraft ? "#eaeef2" : "transparent",
+                  fontWeight: isAcAiDraft ? 600 : 400,
+                  fontSize: 14,
+                }}
+              >
+                <span style={{ display: "flex", alignItems: "center", width: 20 }}>
+                  <CheckSquare size={ICON_SIZE} />
+                </span>
+                <span style={{ flex: 1 }}>AC AI Draft</span>
+              </Link>
             </>
           )}
         </div>
+        <Link
+          href="/design-sprint"
+          className="sidebar-nav-link"
+          data-active={isDesignSprint}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            padding: "8px 12px",
+            borderRadius: 6,
+            marginBottom: 2,
+            textDecoration: "none",
+            color: isDesignSprint ? "#24292f" : "#57606a",
+            background: isDesignSprint ? "#eaeef2" : "transparent",
+            fontWeight: isDesignSprint ? 600 : 400,
+            fontSize: 14,
+          }}
+        >
+          <span style={{ display: "flex", alignItems: "center", width: 20 }}>
+            <Calendar size={ICON_SIZE} />
+          </span>
+          <span style={{ flex: 1 }}>Design Sprint</span>
+        </Link>
       </nav>
       <div style={{ height: 1, background: "#d0d7de", margin: "4px 0" }} />
       <div style={{ padding: "8px 12px 16px", flex: "1 1 auto", minHeight: 0 }}>

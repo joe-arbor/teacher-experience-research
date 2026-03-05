@@ -9,6 +9,7 @@ import { Select } from "baseui/select";
 import { SELECT_FORM_FIELD_OVERRIDES } from "@/components/FormField";
 import type { NpsRow } from "@/app/types";
 import { getSessionFilters, setSessionFilters } from "@/app/filterSession";
+import { Copy, Check } from "lucide-react";
 
 const CATEGORIES = ["Attendance & Registers", "Behaviour Management", "Classroom Management", "Uncategorised"] as const;
 
@@ -35,12 +36,25 @@ function averageNps(rows: NpsRow[]): number | null {
   return Math.round((scores.reduce((a, b) => a + b, 0) / scores.length) * 10) / 10;
 }
 
+function formatRowForCopy(row: NpsRow): string {
+  const score = npsScore(row);
+  const comment = (row.Comments || "").trim() || "(No comment)";
+  const meta = [
+    score !== null ? `NPS ${score}` : "",
+    row["Company Name"] ?? "",
+    row["Responder Role Group"] ?? "",
+    [row.top_level_category, row.sub_category !== "Uncategorised" ? row.sub_category : null].filter(Boolean).join(" › "),
+  ].filter(Boolean).join(" | ");
+  return (meta ? meta + "\n" : "") + comment;
+}
+
 export default function NpsView() {
   const themeReady = useThemeReady();
   const [data, setData] = useState<NpsRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState<string | null>(null);
   const [subCategory, setSubCategory] = useState<string | null>(null);
+  const [copiedId, setCopiedId] = useState<string | "all" | null>(null);
 
   useEffect(() => {
     const s = getSessionFilters();
@@ -100,6 +114,24 @@ export default function NpsView() {
     if (!payload?.name) return;
     setSubCategory((current) => (current === payload.name ? null : payload.name ?? null));
   }, []);
+
+  const copyAll = useCallback(() => {
+    const text = filtered.map((r) => formatRowForCopy(r)).join("\n\n---\n\n");
+    void navigator.clipboard.writeText(text).then(() => {
+      setCopiedId("all");
+      setTimeout(() => setCopiedId(null), 2000);
+    });
+  }, [filtered]);
+
+  const copyOne = useCallback((idx: number) => {
+    const row = filtered[idx];
+    if (!row) return;
+    const text = formatRowForCopy(row);
+    void navigator.clipboard.writeText(text).then(() => {
+      setCopiedId(`row-${idx}`);
+      setTimeout(() => setCopiedId(null), 2000);
+    });
+  }, [filtered]);
 
   const showingLabel = useMemo(() => {
     if (!category && !subCategory) return "All";
@@ -210,23 +242,81 @@ export default function NpsView() {
 
       <h3 style={{ marginBottom: 12 }}>Showing categories: {showingLabel}</h3>
 
-      <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+      {filtered.length > 0 && (
+        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+          <button
+            type="button"
+            onClick={copyAll}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+              padding: "6px 12px",
+              fontSize: 13,
+              fontWeight: 500,
+              color: copiedId === "all" ? "#1a7f37" : "#0969da",
+              background: copiedId === "all" ? "#dafbe1" : "#e7f3ff",
+              border: "1px solid transparent",
+              borderRadius: 6,
+              cursor: "pointer",
+            }}
+          >
+            {copiedId === "all" ? <Check size={16} /> : <Copy size={16} />}
+            {copiedId === "all" ? "Copied" : "Copy all"}
+          </button>
+        </div>
+      )}
+
+      <ul
+        style={{
+          listStyle: "none",
+          padding: 0,
+          margin: 0,
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+          gap: 16,
+        }}
+      >
         {filtered.map((row, idx) => {
           const score = npsScore(row);
           const comment = (row.Comments || "").trim() || "(No comment)";
           return (
             <li
-              key={`${row["Company Name"]}-${row["Responder Name"]}-${idx}`}
+              key={`nps-${idx}`}
               style={{
-                marginBottom: 16,
+                marginBottom: 0,
                 padding: 16,
                 background: "#ffffff",
                 borderRadius: 8,
                 border: "1px solid #d0d7de",
                 boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
+                position: "relative",
               }}
             >
-              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "8px 16px", marginBottom: 8 }}>
+              <button
+                type="button"
+                onClick={() => copyOne(idx)}
+                title="Copy quote"
+                style={{
+                  position: "absolute",
+                  top: 12,
+                  right: 12,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 28,
+                  height: 28,
+                  padding: 0,
+                  border: "none",
+                  borderRadius: 6,
+                  background: copiedId === `row-${idx}` ? "#dafbe1" : "#f6f8fa",
+                  color: copiedId === `row-${idx}` ? "#1a7f37" : "#57606a",
+                  cursor: "pointer",
+                }}
+              >
+                {copiedId === `row-${idx}` ? <Check size={14} /> : <Copy size={14} />}
+              </button>
+              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "8px 16px", marginBottom: 8, paddingRight: 36 }}>
                 {score !== null && (
                   <span
                     style={{
@@ -242,7 +332,7 @@ export default function NpsView() {
                   </span>
                 )}
                 <span style={{ fontSize: 12, color: "#57606a" }}>{row["Company Name"]}</span>
-                <span style={{ fontSize: 12, color: "#57606a" }}>{row["Responder Name"]} · {row["Responder Role Group"]}</span>
+                <span style={{ fontSize: 12, color: "#57606a" }}>{row["Responder Role Group"]}</span>
                 <span style={{ fontSize: 11, color: "#0969da", background: "#ddf4ff", padding: "2px 6px", borderRadius: 4 }}>
                   {row.top_level_category}
                 </span>

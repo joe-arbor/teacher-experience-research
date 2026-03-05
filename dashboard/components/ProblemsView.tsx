@@ -6,7 +6,7 @@ import { useThemeReady } from "@/app/providers";
 import { Heading, HeadingLevel } from "baseui/heading";
 import { Select } from "baseui/select";
 import { Button } from "baseui/button";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { Copy, Check, ChevronDown, ChevronRight } from "lucide-react";
 import { SELECT_FORM_FIELD_OVERRIDES } from "@/components/FormField";
 import { CategorySplitPieChart } from "@/components/CategorySplitPieChart";
 import type { FeedbackRow } from "@/app/types";
@@ -54,6 +54,27 @@ export default function ProblemsView() {
   const [subCategory, setSubCategory] = useState<string | null>(null);
   const [overrides, setOverrides] = useState<Record<string, { description?: string; valueToCustomer?: ValueToCustomer }>>({});
   const [expandedKeys, setExpandedKeys] = useState<Set<string>>(new Set());
+  const [copiedRowKey, setCopiedRowKey] = useState<string | null>(null);
+
+  const copyParentRow = useCallback((parent: ProblemRow) => {
+    const text = `${parent.label}\n${parent.category}\nCards: ${parent.cardCount}`;
+    void navigator.clipboard.writeText(text).then(() => {
+      setCopiedRowKey(parent._key);
+      setTimeout(() => setCopiedRowKey(null), 2000);
+    });
+  }, []);
+
+  const copyChildRow = useCallback(
+    (child: ProblemRow, themeDescription?: string) => {
+      const parts = [child.label, themeDescription, `Category: ${child.category}`, `Sub-category: ${child.subCategory}`, `Cards: ${child.cardCount}`];
+      const text = parts.filter(Boolean).join("\n\n");
+      void navigator.clipboard.writeText(text).then(() => {
+        setCopiedRowKey(child._key);
+        setTimeout(() => setCopiedRowKey(null), 2000);
+      });
+    },
+    []
+  );
 
   useEffect(() => {
     setOverrides(loadOverrides());
@@ -278,17 +299,39 @@ export default function ProblemsView() {
                       <span style={{ fontWeight: 600, color: "#24292f" }}>{parent.cardCount}</span>
                     </td>
                     <td style={{ padding: "8px 12px" }}>
-                      <Button
-                        kind="tertiary"
-                        size="compact"
-                        onClick={() =>
-                          router.push(
-                            `/categories?category=${encodeURIComponent(parent.category)}&sub=${encodeURIComponent(parent.subCategory)}`
-                          )
-                        }
-                      >
-                        View evidence
-                      </Button>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                        <button
+                          type="button"
+                          onClick={() => copyParentRow(parent)}
+                          title="Copy row"
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            width: 28,
+                            height: 28,
+                            padding: 0,
+                            border: "none",
+                            borderRadius: 6,
+                            background: copiedRowKey === parent._key ? "#dafbe1" : "#eaeef2",
+                            color: copiedRowKey === parent._key ? "#1a7f37" : "#57606a",
+                            cursor: "pointer",
+                          }}
+                        >
+                          {copiedRowKey === parent._key ? <Check size={14} /> : <Copy size={14} />}
+                        </button>
+                        <Button
+                          kind="tertiary"
+                          size="compact"
+                          onClick={() =>
+                            router.push(
+                              `/categories?category=${encodeURIComponent(parent.category)}&sub=${encodeURIComponent(parent.subCategory)}`
+                            )
+                          }
+                        >
+                          View evidence
+                        </Button>
+                      </div>
                     </td>
                   </tr>
                   {showChildren &&
@@ -310,19 +353,41 @@ export default function ProblemsView() {
                             <span style={{ color: "#24292f" }}>{child.cardCount}</span>
                           </td>
                           <td style={{ padding: "8px 12px" }}>
-                            {child.themeId && (
-                              <Button
-                                kind="tertiary"
-                                size="compact"
-                                onClick={() =>
-                                  router.push(
-                                    `/categories?category=${encodeURIComponent(child.category)}&sub=${encodeURIComponent(child.subCategory)}&theme=${encodeURIComponent(child.themeId ?? "")}`
-                                  )
-                                }
+                            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                              <button
+                                type="button"
+                                onClick={() => copyChildRow(child, themeDescription)}
+                                title="Copy row"
+                                style={{
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  width: 28,
+                                  height: 28,
+                                  padding: 0,
+                                  border: "none",
+                                  borderRadius: 6,
+                                  background: copiedRowKey === child._key ? "#dafbe1" : "#eaeef2",
+                                  color: copiedRowKey === child._key ? "#1a7f37" : "#57606a",
+                                  cursor: "pointer",
+                                }}
                               >
-                                View evidence
-                              </Button>
-                            )}
+                                {copiedRowKey === child._key ? <Check size={14} /> : <Copy size={14} />}
+                              </button>
+                              {child.themeId && (
+                                <Button
+                                  kind="tertiary"
+                                  size="compact"
+                                  onClick={() =>
+                                    router.push(
+                                      `/categories?category=${encodeURIComponent(child.category)}&sub=${encodeURIComponent(child.subCategory)}&theme=${encodeURIComponent(child.themeId ?? "")}`
+                                    )
+                                  }
+                                >
+                                  View evidence
+                                </Button>
+                              )}
+                            </div>
                           </td>
                         </tr>
                       );

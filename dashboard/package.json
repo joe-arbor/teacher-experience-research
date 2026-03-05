@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "enrich-nps": "ts-node --compiler-options '{\"module\":\"CommonJS\",\"moduleResolution\":\"node\"}' scripts/enrich-nps.ts",
-    "generate-hmw": "ts-node --compiler-options '{\"module\":\"CommonJS\",\"moduleResolution\":\"node\"}' scripts/generate-hmw.ts"
+    "generate-hmw": "ts-node --compiler-options '{\"module\":\"CommonJS\",\"moduleResolution\":\"node\"}' scripts/generate-hmw.ts",
+    "generate-nps-hmw": "node scripts/generate-nps-hmw.cjs"
   },
   "dependencies": {
     "baseui": "^14.0.0",

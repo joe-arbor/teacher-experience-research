@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useThemeReady } from "@/app/providers";
 import { Heading, HeadingLevel } from "baseui/heading";
 import { PROBLEM_THEMES, getThemesForSubCategory, assignRowToTheme } from "@/app/problemThemes";
 import { getHmw } from "@/app/hmwStatements";
 import type { FeedbackRow } from "@/app/types";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Copy, Check } from "lucide-react";
 
 const CATEGORIES = ["Attendance & Registers", "Behaviour Management", "Classroom Management"] as const;
 
@@ -91,6 +91,15 @@ export default function ProblemStatementsView() {
   const [data, setData] = useState<FeedbackRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<string | "all">("all");
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  const copyCard = useCallback((item: ThemeItem, problemStatements: string[]) => {
+    const text = [item.label, item.hmw, ...problemStatements].filter(Boolean).join("\n\n");
+    void navigator.clipboard.writeText(text).then(() => {
+      setCopiedId(`${item.category}|${item.subCategory}|${item.themeId}`);
+      setTimeout(() => setCopiedId(null), 2000);
+    });
+  }, []);
 
   useEffect(() => {
     fetch("/teacher_experience_data.json")
@@ -263,21 +272,48 @@ export default function ProblemStatementsView() {
                     >
                       {themeItems.map((item) => {
                         const problemStatements = generateProblemStatements(item);
+                        const cardKey = `${item.category}|${item.subCategory}|${item.themeId}`;
+                        const copied = copiedId === cardKey;
                         return (
                           <li
-                            key={`${item.category}|${item.subCategory}|${item.themeId}`}
+                            key={cardKey}
                             style={{
                               padding: "14px 16px",
                               background: "#f6f8fa",
                               borderRadius: 8,
                               border: "1px solid #d0d7de",
+                              position: "relative",
                             }}
                           >
+                            <button
+                              type="button"
+                              onClick={() => copyCard(item, problemStatements)}
+                              title="Copy card"
+                              style={{
+                                position: "absolute",
+                                top: 14,
+                                right: 14,
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                width: 28,
+                                height: 28,
+                                padding: 0,
+                                border: "none",
+                                borderRadius: 6,
+                                background: copied ? "#dafbe1" : "#eaeef2",
+                                color: copied ? "#1a7f37" : "#57606a",
+                                cursor: "pointer",
+                              }}
+                            >
+                              {copied ? <Check size={14} /> : <Copy size={14} />}
+                            </button>
                             <div
                               style={{
                                 fontWeight: 600,
                                 color: "#24292f",
                                 marginBottom: 6,
+                                paddingRight: 36,
                               }}
                             >
                               {item.label}

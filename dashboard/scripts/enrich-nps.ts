@@ -126,6 +126,7 @@ function main() {
 
     enriched.push({
       ...row,
+      "Responder Name": "[Redacted]",
       top_level_category,
       sub_category,
       theme_id,
