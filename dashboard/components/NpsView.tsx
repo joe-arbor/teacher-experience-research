@@ -8,6 +8,7 @@ import { Heading, HeadingLevel } from "baseui/heading";
 import { Select } from "baseui/select";
 import { SELECT_FORM_FIELD_OVERRIDES } from "@/components/FormField";
 import type { NpsRow } from "@/app/types";
+import { getSessionFilters, setSessionFilters } from "@/app/filterSession";
 
 const CATEGORIES = ["Attendance & Registers", "Behaviour Management", "Classroom Management", "Uncategorised"] as const;
 
@@ -40,6 +41,16 @@ export default function NpsView() {
   const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState<string | null>(null);
   const [subCategory, setSubCategory] = useState<string | null>(null);
+
+  useEffect(() => {
+    const s = getSessionFilters();
+    setCategory(s.category);
+    setSubCategory(s.subCategory);
+  }, []);
+
+  useEffect(() => {
+    setSessionFilters({ category, subCategory, theme: null });
+  }, [category, subCategory]);
 
   useEffect(() => {
     fetch("/nps_feedback_2025.json")

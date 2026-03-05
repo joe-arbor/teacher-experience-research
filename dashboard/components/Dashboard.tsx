@@ -13,6 +13,7 @@ import { TicketDetailModal } from "@/components/TicketDetailModal";
 import { AskSection } from "@/components/AskSection";
 import type { FeedbackRow } from "@/app/types";
 import { getThemesForSubCategory, assignRowToTheme } from "@/app/problemThemes";
+import { getSessionFilters, setSessionFilters } from "@/app/filterSession";
 
 const CATEGORIES = ["Attendance & Registers", "Behaviour Management", "Classroom Management"] as const;
 
@@ -44,6 +45,17 @@ export default function Dashboard() {
   const [selectedTicket, setSelectedTicket] = useState<FeedbackRow | null>(null);
   const [askLoading, setAskLoading] = useState(false);
   const [askAnswer, setAskAnswer] = useState<string | null>(null);
+
+  useEffect(() => {
+    const s = getSessionFilters();
+    setCategory(s.category);
+    setSubCategory(s.subCategory);
+    setTheme(s.theme);
+  }, []);
+
+  useEffect(() => {
+    setSessionFilters({ category, subCategory, theme });
+  }, [category, subCategory, theme]);
 
   useEffect(() => {
     fetch("/teacher_experience_data.json")

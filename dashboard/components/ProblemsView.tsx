@@ -12,6 +12,7 @@ import { CategorySplitPieChart } from "@/components/CategorySplitPieChart";
 import type { FeedbackRow } from "@/app/types";
 import type { ProblemRow, ValueToCustomer } from "@/app/types";
 import { getThemesForSubCategory, assignRowToTheme } from "@/app/problemThemes";
+import { getSessionFilters, setSessionFilters } from "@/app/filterSession";
 
 const CATEGORIES = ["Attendance & Registers", "Behaviour Management", "Classroom Management"] as const;
 const STORAGE_KEY = "problems-overrides";
@@ -57,6 +58,16 @@ export default function ProblemsView() {
   useEffect(() => {
     setOverrides(loadOverrides());
   }, []);
+
+  useEffect(() => {
+    const s = getSessionFilters();
+    setCategory(s.category);
+    setSubCategory(s.subCategory);
+  }, []);
+
+  useEffect(() => {
+    setSessionFilters({ category, subCategory, theme: null });
+  }, [category, subCategory]);
 
   useEffect(() => {
     fetch("/teacher_experience_data.json")

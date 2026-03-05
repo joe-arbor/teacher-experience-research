@@ -16,6 +16,9 @@ import {
   ChevronDown,
   ChevronRight,
   FileText,
+  Lightbulb,
+  CheckSquare,
+  AlertCircle,
 } from "lucide-react";
 
 const SIDEBAR_WIDTH = 260;
@@ -42,10 +45,15 @@ export function Sidebar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const isChangelog = pathname === "/changelog";
+  const isDesignHmw = pathname === "/design-hmw";
+  const isAcAiDraft = pathname === "/ac-ai-draft";
+  const isProblemStatements = pathname === "/problem-statements";
   const isProductFeedbackActive = PRODUCT_FEEDBACK_ITEMS.some((item) => pathname === item.href);
   const isTeacherNpsActive = TEACHER_NPS_2025_ITEMS.some((item) => pathname === item.href);
   const [productFeedbackOpen, setProductFeedbackOpen] = useState(isProductFeedbackActive);
   const [teacherNpsOpen, setTeacherNpsOpen] = useState(isTeacherNpsActive);
+  const isAiSuggestedActive = isDesignHmw || isAcAiDraft || isProblemStatements;
+  const [aiSuggestedOpen, setAiSuggestedOpen] = useState(isAiSuggestedActive);
 
   useEffect(() => {
     if (isProductFeedbackActive) setProductFeedbackOpen(true);
@@ -115,7 +123,6 @@ export function Sidebar() {
           </span>
           <span style={{ flex: 1 }}>Changelog</span>
         </Link>
-
         <div style={{ marginBottom: 2 }}>
           <button
             type="button"
@@ -244,6 +251,113 @@ export function Sidebar() {
                 </Link>
               );
             })}
+        </div>
+
+        <div style={{ marginBottom: 2 }}>
+          <button
+            type="button"
+            onClick={() => setAiSuggestedOpen((open) => !open)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              width: "100%",
+              padding: "8px 12px",
+              borderRadius: 6,
+              border: "none",
+              background: isAiSuggestedActive ? "#eaeef2" : "transparent",
+              color: isAiSuggestedActive ? "#24292f" : "#57606a",
+              fontWeight: isAiSuggestedActive ? 600 : 400,
+              fontSize: 14,
+              cursor: "pointer",
+              textAlign: "left",
+            }}
+          >
+            <span style={{ display: "flex", alignItems: "center", width: 20 }}>
+              {aiSuggestedOpen ? (
+                <ChevronDown size={ICON_SIZE} />
+              ) : (
+                <ChevronRight size={ICON_SIZE} />
+              )}
+            </span>
+            <span style={{ display: "flex", alignItems: "center", gap: 8, flex: 1 }}>
+              <Lightbulb size={ICON_SIZE} />
+              AI-Suggested Actions
+            </span>
+          </button>
+          {aiSuggestedOpen && (
+            <>
+              <Link
+                href="/design-hmw"
+                className="sidebar-nav-link"
+                data-active={isDesignHmw}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  padding: "8px 12px 8px 38px",
+                  borderRadius: 6,
+                  marginBottom: 2,
+                  textDecoration: "none",
+                  color: isDesignHmw ? "#24292f" : "#57606a",
+                  background: isDesignHmw ? "#eaeef2" : "transparent",
+                  fontWeight: isDesignHmw ? 600 : 400,
+                  fontSize: 14,
+                }}
+              >
+                <span style={{ display: "flex", alignItems: "center", width: 20 }}>
+                  <Lightbulb size={ICON_SIZE} />
+                </span>
+                <span style={{ flex: 1 }}>Design HMW</span>
+              </Link>
+              <Link
+                href="/ac-ai-draft"
+                className="sidebar-nav-link"
+                data-active={isAcAiDraft}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  padding: "8px 12px 8px 38px",
+                  borderRadius: 6,
+                  marginBottom: 2,
+                  textDecoration: "none",
+                  color: isAcAiDraft ? "#24292f" : "#57606a",
+                  background: isAcAiDraft ? "#eaeef2" : "transparent",
+                  fontWeight: isAcAiDraft ? 600 : 400,
+                  fontSize: 14,
+                }}
+              >
+                <span style={{ display: "flex", alignItems: "center", width: 20 }}>
+                  <CheckSquare size={ICON_SIZE} />
+                </span>
+                <span style={{ flex: 1 }}>AC AI Draft</span>
+              </Link>
+              <Link
+                href="/problem-statements"
+                className="sidebar-nav-link"
+                data-active={isProblemStatements}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  padding: "8px 12px 8px 38px",
+                  borderRadius: 6,
+                  marginBottom: 2,
+                  textDecoration: "none",
+                  color: isProblemStatements ? "#24292f" : "#57606a",
+                  background: isProblemStatements ? "#eaeef2" : "transparent",
+                  fontWeight: isProblemStatements ? 600 : 400,
+                  fontSize: 14,
+                }}
+              >
+                <span style={{ display: "flex", alignItems: "center", width: 20 }}>
+                  <AlertCircle size={ICON_SIZE} />
+                </span>
+                <span style={{ flex: 1 }}>Problem Statements</span>
+              </Link>
+            </>
+          )}
         </div>
       </nav>
       <div style={{ height: 1, background: "#d0d7de", margin: "4px 0" }} />

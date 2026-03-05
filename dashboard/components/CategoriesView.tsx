@@ -14,6 +14,7 @@ import { TicketDetailModal } from "@/components/TicketDetailModal";
 import { AskSection } from "@/components/AskSection";
 import type { FeedbackRow } from "@/app/types";
 import { getThemesForSubCategory, assignRowToTheme } from "@/app/problemThemes";
+import { getSessionFilters, setSessionFilters } from "@/app/filterSession";
 
 const CATEGORIES = ["Attendance & Registers", "Behaviour Management", "Classroom Management"] as const;
 
@@ -23,6 +24,7 @@ function filterData(
     category: string | null;
     subCategory: string | null;
     theme: string | null;
+    roles: string[];
   }
 ): FeedbackRow[] {
   let out = data;
@@ -32,6 +34,7 @@ function filterData(
     const themes = getThemesForSubCategory(filters.category, filters.subCategory);
     if (themes.length > 0) out = out.filter((r) => assignRowToTheme(r, themes) === filters.theme);
   }
+  if (filters.roles.length > 0) out = out.filter((r) => filters.roles.includes(r.role));
   return out;
 }
 
@@ -44,6 +47,7 @@ export default function CategoriesView() {
   const [category, setCategory] = useState<string | null>(null);
   const [subCategory, setSubCategory] = useState<string | null>(null);
   const [theme, setTheme] = useState<string | null>(null);
+  const [roles, setRoles] = useState<string[]>([]);
   const [selectedTicket, setSelectedTicket] = useState<FeedbackRow | null>(null);
   const [askLoading, setAskLoading] = useState(false);
   const [askAnswer, setAskAnswer] = useState<string | null>(null);
@@ -53,10 +57,21 @@ export default function CategoriesView() {
     const cat = searchParams.get("category");
     const sub = searchParams.get("sub");
     const th = searchParams.get("theme");
-    if (cat) setCategory(cat);
-    if (sub) setSubCategory(sub);
-    if (th && th.trim()) setTheme(th); else setTheme(null);
+    if (cat || sub || (th && th.trim())) {
+      setCategory(cat || null);
+      setSubCategory(sub || null);
+      setTheme(th && th.trim() ? th : null);
+    } else {
+      const s = getSessionFilters();
+      setCategory(s.category);
+      setSubCategory(s.subCategory);
+      setTheme(s.theme);
+    }
   }, [searchParams]);
+
+  useEffect(() => {
+    setSessionFilters({ category, subCategory, theme });
+  }, [category, subCategory, theme]);
 
   useEffect(() => {
     fetch("/teacher_experience_data.json")
@@ -72,8 +87,8 @@ export default function CategoriesView() {
   }, [category, subCategory]);
 
   const filtered = useMemo(
-    () => filterData(data, { category, subCategory, theme }),
-    [data, category, subCategory, theme]
+    () => filterData(data, { category, subCategory, theme, roles }),
+    [data, category, subCategory, theme, roles]
   );
 
   const subCategoriesForCategory = useMemo(() => {
@@ -94,6 +109,17 @@ export default function CategoriesView() {
     });
     return Object.entries(counts).map(([name, count]) => ({ name, count }));
   }, [data]);
+
+  const rolesForFilter = useMemo(() => {
+    const set = new Set<string>();
+    data.forEach((r) => {
+      if (!CATEGORIES.includes(r.top_level_category as (typeof CATEGORIES)[number])) return;
+      if (category && r.top_level_category !== category) return;
+      if (subCategory && r.sub_category !== subCategory) return;
+      if (r.role && r.role.trim()) set.add(r.role);
+    });
+    return Array.from(set).sort((a, b) => a.localeCompare(b));
+  }, [data, category, subCategory]);
 
   const handleAsk = useCallback(
     async (question: string) => {
@@ -135,8 +161,9 @@ export default function CategoriesView() {
       const def = themesForFilter.find((t) => t.id === theme);
       parts.push(def?.label ?? theme);
     }
+    if (roles.length > 0) parts.push(`Roles: ${roles.join(", ")}`);
     return parts.length ? parts.join(" › ") : "All";
-  }, [category, subCategory, theme, themesForFilter]);
+  }, [category, subCategory, theme, themesForFilter, roles]);
 
   if (!themeReady || loading) {
     return (
@@ -166,9 +193,13 @@ export default function CategoriesView() {
                 value={category ? [{ id: category, label: category }] : [{ id: "__all__", label: "All categories" }]}
                 onChange={({ value }) => {
                   const id = value[0]?.id as string;
-                  setCategory(id && id !== "__all__" ? id : null);
+                  const newCat = id && id !== "__all__" ? id : null;
+                  setCategory(newCat);
                   setSubCategory(null);
                   setTheme(null);
+                  const params = new URLSearchParams();
+                  if (newCat) params.set("category", newCat);
+                  router.replace(params.toString() ? `/categories?${params.toString()}` : "/categories");
                 }}
                 getOptionLabel={({ option }) => (option?.label as string) ?? ""}
                 getValueLabel={({ option }) => (option?.label as string) ?? "All categories"}
@@ -183,12 +214,32 @@ export default function CategoriesView() {
                 value={subCategory ? [{ id: subCategory, label: subCategory }] : [{ id: "__all__", label: "All sub-categories" }]}
                 onChange={({ value }) => {
                   const id = value[0]?.id as string;
-                  setSubCategory(id && id !== "__all__" ? id : null);
+                  const newSub = id && id !== "__all__" ? id : null;
+                  setSubCategory(newSub);
                   setTheme(null);
+                  const params = new URLSearchParams();
+                  if (category) params.set("category", category);
+                  if (newSub) params.set("sub", newSub);
+                  router.replace(params.toString() ? `/categories?${params.toString()}` : "/categories");
                 }}
                 getOptionLabel={({ option }) => (option?.label as string) ?? ""}
                 getValueLabel={({ option }) => (option?.label as string) ?? "All sub-categories"}
                 placeholder="All sub-categories"
+              />
+            </div>
+            <div style={{ minWidth: 220 }}>
+              <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#24292f", marginBottom: 4 }}>Role</label>
+              <Select
+                overrides={SELECT_FORM_FIELD_OVERRIDES}
+                multi
+                options={rolesForFilter.map((r) => ({ id: r, label: r }))}
+                value={roles.map((r) => ({ id: r, label: r }))}
+                onChange={({ value }) => {
+                  setRoles((value ?? []).map((v) => v.id as string));
+                }}
+                getOptionLabel={({ option }) => (option?.label as string) ?? ""}
+                getValueLabel={({ option }) => (option?.label as string) ?? ""}
+                placeholder="All roles"
               />
             </div>
             {themesForFilter.length > 0 && (

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "enrich-nps": "ts-node --compiler-options '{\"module\":\"CommonJS\",\"moduleResolution\":\"node\"}' scripts/enrich-nps.ts"
+    "enrich-nps": "ts-node --compiler-options '{\"module\":\"CommonJS\",\"moduleResolution\":\"node\"}' scripts/enrich-nps.ts",
+    "generate-hmw": "ts-node --compiler-options '{\"module\":\"CommonJS\",\"moduleResolution\":\"node\"}' scripts/generate-hmw.ts"
   },
   "dependencies": {
     "baseui": "^14.0.0",
@@ -23,6 +24,8 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
