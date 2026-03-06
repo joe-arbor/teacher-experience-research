@@ -60,9 +60,15 @@ export function CategorySplitPieChart({ data: rawData, title = "Overview by cate
               ))}
             </Pie>
             <Tooltip
-              formatter={(value: number, _name: string, props: { payload: { count: number; percentage: number } }) => {
-                const p = props.payload;
-                return [`${p.count} (${p.percentage}%)`, "Count"];
+              formatter={(value: number, _name: string, item: { payload?: { count?: number; percentage?: number } }) => {
+                const p = item?.payload;
+                const count = p?.count ?? value;
+                const percentage = p?.percentage;
+                const label =
+                  typeof percentage === "number"
+                    ? `${count} (${percentage}%)`
+                    : `${count}`;
+                return [label, "Count"];
               }}
             />
             <Legend
