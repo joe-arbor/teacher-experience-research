@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
-import { AppShell } from "@/components/AppShell";
+import { AuthProvider } from "./auth-context";
+import { AuthGate } from "@/components/AuthGate";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import "./globals.css";
 
@@ -22,7 +23,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <ErrorBoundary>
-            <AppShell>{children}</AppShell>
+            <AuthProvider>
+              <AuthGate>
+                {children}
+              </AuthGate>
+            </AuthProvider>
           </ErrorBoundary>
         </Providers>
       </body>
